@@ -210,16 +210,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -296,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/02/Vue学习-利用插槽制作灵活的组件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吃土的小此方">
@@ -315,7 +305,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/25/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2017/12/02/Vue学习-利用插槽制作灵活的组件/" itemprop="url">router-view 复用时组件不刷新的解决办法</a></h1>
         
 
         <div class="post-meta">
@@ -327,8 +317,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T19:43:30+08:00">
-                2017-11-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-02T10:42:37+08:00">
+                2017-12-02
               </time>
             
 
@@ -350,8 +340,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Test/" itemprop="url" rel="index">
-                    <span itemprop="name">Test</span>
+                  <a href="/categories/前端学习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端学习</span>
                   </a>
                 </span>
 
@@ -389,15 +379,14 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <p>在使用Vue-router做项目时，会遇到如<code>/serviceId/:id</code>这样只改变<code>id</code>号的场景。由于router-view是复用的，单纯的改变<code>id</code>号并不会刷新router-view，而这并不是我们所期望的结果。</p>
+<p>当然，我们可以在点击事件上加上<code>router.go(0)</code>，强制刷新整个页面来满足效果。但页面整体的刷新会使体验下降，并且作为个人也不是很能接受这样的方法。在查阅了一些资料后，发现可以有以下两种方法可以解决问题。</p>
+<h4 id="1-使用watch方法"><a href="#1-使用watch方法" class="headerlink" title="1. 使用watch方法"></a>1. 使用watch方法</h4><p>watch方法据说是官方推荐的方法（抱歉，我没好好看文档）。当<code>id</code>发生变化时，’$route’也会相应地发生变化，因此可以通过watch的方法来进行操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  <span class="string">'$route'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">to, from</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// console.log(to)</span></span><br><span class="line">    <span class="comment">// console.log(from)</span></span><br><span class="line">    <span class="comment">// 我这里还是用了Vuex，不过应该不影响理解</span></span><br><span class="line">    <span class="keyword">this</span>.$store.dispatch(<span class="string">'updateActiveTemplateId'</span>, <span class="keyword">this</span>.$route.params.templateId) </span><br><span class="line">    <span class="comment">// 通过更新Vuex中的store的数据，让数据发生变化</span></span><br><span class="line">    <span class="keyword">this</span>.getTemplateById()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-添加一个随机数"><a href="#2-添加一个随机数" class="headerlink" title="2. 添加一个随机数"></a>2. 添加一个随机数</h4><p>通过给<code>router-view</code>添加一个动态变化的参数，让Vue认为这个组件每一次都是一个新组件，从而重新刷新。<br>这个个人感觉是一个十分巧妙和优雅的方法，但是我这次并没有用（捂脸）。具体的实现如下：</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-view :key=<span class="string">"key"</span>&gt;&lt;/router-view&gt;</span><br><span class="line">computed: &#123;</span><br><span class="line">    key() &#123;</span><br><span class="line">        return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>具体的做法可以参考这篇文章：<a href="https://segmentfault.com/a/1190000009275424#articleHeader16" target="_blank" rel="noopener">手摸手，带你用vue撸后台 系列一(基础篇)</a></p>
 
           
         
@@ -505,7 +494,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -558,7 +547,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

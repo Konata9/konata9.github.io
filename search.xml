@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2017%2F11%2F25%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[router-view 复用时组件不刷新的解决办法]]></title>
+    <url>%2F2017%2F12%2F02%2FVue%E5%AD%A6%E4%B9%A0-%E5%88%A9%E7%94%A8%E6%8F%92%E6%A7%BD%E5%88%B6%E4%BD%9C%E7%81%B5%E6%B4%BB%E7%9A%84%E7%BB%84%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[在使用Vue-router做项目时，会遇到如/serviceId/:id这样只改变id号的场景。由于router-view是复用的，单纯的改变id号并不会刷新router-view，而这并不是我们所期望的结果。 当然，我们可以在点击事件上加上router.go(0)，强制刷新整个页面来满足效果。但页面整体的刷新会使体验下降，并且作为个人也不是很能接受这样的方法。在查阅了一些资料后，发现可以有以下两种方法可以解决问题。 1. 使用watch方法watch方法据说是官方推荐的方法（抱歉，我没好好看文档）。当id发生变化时，’$route’也会相应地发生变化，因此可以通过watch的方法来进行操作。12345678910watch: &#123; '$route': function (to, from) &#123; // console.log(to) // console.log(from) // 我这里还是用了Vuex，不过应该不影响理解 this.$store.dispatch('updateActiveTemplateId', this.$route.params.templateId) // 通过更新Vuex中的store的数据，让数据发生变化 this.getTemplateById() &#125;&#125;, 2. 添加一个随机数通过给router-view添加一个动态变化的参数，让Vue认为这个组件每一次都是一个新组件，从而重新刷新。这个个人感觉是一个十分巧妙和优雅的方法，但是我这次并没有用（捂脸）。具体的实现如下： 123456&lt;router-view :key="key"&gt;&lt;/router-view&gt;computed: &#123; key() &#123; return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date() &#125; &#125; 具体的做法可以参考这篇文章：手摸手，带你用vue撸后台 系列一(基础篇)]]></content>
       <categories>
-        <category>Test</category>
+        <category>前端学习</category>
       </categories>
       <tags>
-        <tag>Testing</tag>
+        <tag>Vue</tag>
+        <tag>vue-router</tag>
       </tags>
   </entry>
 </search>
