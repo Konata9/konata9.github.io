@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Vue,vue-router," />
+  <meta name="keywords" content="Vue," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="在使用Vue-router做项目时，会遇到如/serviceId/:id这样只改变id号的场景。由于router-view是复用的，单纯的改变id号并不会刷新router-view，而这并不是我们所期望的结果。 当然，我们可以在点击事件上加上router.go(0)，强制刷新整个页面来满足效果。但页面整体的刷新会使体验">
-<meta name="keywords" content="Vue,vue-router">
+<meta name="description" content="jsdoc是前端自动生成文档所常用的工具。我们只要按照jsdoc的语法来书写注释就能顺利的生成一片很漂亮的文档。 只是jsdoc针对的是js文件，对于.vue文件似乎就有些无能为力了。不过既然vue这么人气，相信一定也会有相应的工具。在找了一圈之后，果然找到了一位前辈写的jsdoc-vue。 在研究了一下之后，发现这个">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="router-view 复用时组件不刷新的解决办法">
-<meta property="og:url" content="http://yoursite.com/2017/12/02/Vue学习-利用插槽制作灵活的组件/index.html">
+<meta property="og:title" content="利用jsdoc为vue项目生成漂亮的文档">
+<meta property="og:url" content="http://yoursite.com/2018/01/26/利用jsdoc为vue项目生成漂亮的文档/index.html">
 <meta property="og:site_name" content="此方的秘密基地">
-<meta property="og:description" content="在使用Vue-router做项目时，会遇到如/serviceId/:id这样只改变id号的场景。由于router-view是复用的，单纯的改变id号并不会刷新router-view，而这并不是我们所期望的结果。 当然，我们可以在点击事件上加上router.go(0)，强制刷新整个页面来满足效果。但页面整体的刷新会使体验下降，并且作为个人也不是很能接受这样的方法。在查阅了一些资料后，发现可以有以下两">
+<meta property="og:description" content="jsdoc是前端自动生成文档所常用的工具。我们只要按照jsdoc的语法来书写注释就能顺利的生成一片很漂亮的文档。 只是jsdoc针对的是js文件，对于.vue文件似乎就有些无能为力了。不过既然vue这么人气，相信一定也会有相应的工具。在找了一圈之后，果然找到了一位前辈写的jsdoc-vue。 在研究了一下之后，发现这个工具主要解决了jsdoc不认.vue文件的问题。虽然可以让.vue文件自动生成文">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-25T16:11:32.552Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101443-6df83ab7a3834c37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-01-26T07:20:39.880Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="router-view 复用时组件不刷新的解决办法">
-<meta name="twitter:description" content="在使用Vue-router做项目时，会遇到如/serviceId/:id这样只改变id号的场景。由于router-view是复用的，单纯的改变id号并不会刷新router-view，而这并不是我们所期望的结果。 当然，我们可以在点击事件上加上router.go(0)，强制刷新整个页面来满足效果。但页面整体的刷新会使体验下降，并且作为个人也不是很能接受这样的方法。在查阅了一些资料后，发现可以有以下两">
+<meta name="twitter:title" content="利用jsdoc为vue项目生成漂亮的文档">
+<meta name="twitter:description" content="jsdoc是前端自动生成文档所常用的工具。我们只要按照jsdoc的语法来书写注释就能顺利的生成一片很漂亮的文档。 只是jsdoc针对的是js文件，对于.vue文件似乎就有些无能为力了。不过既然vue这么人气，相信一定也会有相应的工具。在找了一圈之后，果然找到了一位前辈写的jsdoc-vue。 在研究了一下之后，发现这个工具主要解决了jsdoc不认.vue文件的问题。虽然可以让.vue文件自动生成文">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3101443-6df83ab7a3834c37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/02/Vue学习-利用插槽制作灵活的组件/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/26/利用jsdoc为vue项目生成漂亮的文档/"/>
 
 
 
 
 
-  <title>router-view 复用时组件不刷新的解决办法 | 此方的秘密基地</title>
+  <title>利用jsdoc为vue项目生成漂亮的文档 | 此方的秘密基地</title>
   
 
 
@@ -211,6 +213,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -287,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/02/Vue学习-利用插槽制作灵活的组件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/26/利用jsdoc为vue项目生成漂亮的文档/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吃土的小此方">
@@ -304,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">router-view 复用时组件不刷新的解决办法</h1>
+          <h1 class="post-title" itemprop="name headline">利用jsdoc为vue项目生成漂亮的文档</h1>
         
 
         <div class="post-meta">
@@ -316,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-02T10:42:37+08:00">
-                2017-12-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-26T15:19:40+08:00">
+                2018-01-26
               </time>
             
 
@@ -376,14 +388,18 @@
       
 
       
-        <p>在使用Vue-router做项目时，会遇到如<code>/serviceId/:id</code>这样只改变<code>id</code>号的场景。由于router-view是复用的，单纯的改变<code>id</code>号并不会刷新router-view，而这并不是我们所期望的结果。</p>
-<p>当然，我们可以在点击事件上加上<code>router.go(0)</code>，强制刷新整个页面来满足效果。但页面整体的刷新会使体验下降，并且作为个人也不是很能接受这样的方法。在查阅了一些资料后，发现可以有以下两种方法可以解决问题。</p>
-<h4 id="1-使用watch方法"><a href="#1-使用watch方法" class="headerlink" title="1. 使用watch方法"></a>1. 使用watch方法</h4><p>watch方法据说是官方推荐的方法（抱歉，我没好好看文档）。当<code>id</code>发生变化时，’$route’也会相应地发生变化，因此可以通过watch的方法来进行操作。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  <span class="string">'$route'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">to, from</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// console.log(to)</span></span><br><span class="line">    <span class="comment">// console.log(from)</span></span><br><span class="line">    <span class="comment">// 我这里还是用了Vuex，不过应该不影响理解</span></span><br><span class="line">    <span class="keyword">this</span>.$store.dispatch(<span class="string">'updateActiveTemplateId'</span>, <span class="keyword">this</span>.$route.params.templateId) </span><br><span class="line">    <span class="comment">// 通过更新Vuex中的store的数据，让数据发生变化</span></span><br><span class="line">    <span class="keyword">this</span>.getTemplateById()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-添加一个随机数"><a href="#2-添加一个随机数" class="headerlink" title="2. 添加一个随机数"></a>2. 添加一个随机数</h4><p>通过给<code>router-view</code>添加一个动态变化的参数，让Vue认为这个组件每一次都是一个新组件，从而重新刷新。<br>这个个人感觉是一个十分巧妙和优雅的方法，但是我这次并没有用（捂脸）。具体的实现如下：</p>
-<blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-view :key=<span class="string">"key"</span>&gt;&lt;/router-view&gt;</span><br><span class="line">computed: &#123;</span><br><span class="line">    key() &#123;</span><br><span class="line">        return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date()</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>具体的做法可以参考这篇文章：<a href="https://segmentfault.com/a/1190000009275424#articleHeader16" target="_blank" rel="noopener">手摸手，带你用vue撸后台 系列一(基础篇)</a></p>
+        <p>jsdoc是前端自动生成文档所常用的工具。我们只要按照jsdoc的语法来书写注释就能顺利的生成一片很漂亮的文档。</p>
+<p>只是jsdoc针对的是<code>js</code>文件，对于<code>.vue</code>文件似乎就有些无能为力了。不过既然<code>vue</code>这么人气，相信一定也会有相应的工具。在找了一圈之后，果然找到了一位前辈写的<code>jsdoc-vue</code>。</p>
+<p>在研究了一下之后，发现这个工具主要解决了jsdoc不认<code>.vue</code>文件的问题。虽然可以让<code>.vue</code>文件自动生成文档，但生成出的文档样式却并不好看。于是就fork过来改造了一下。</p>
+<p>废话不多说，先上一张生成的文档截图。<br>github地址：<a href="https://github.com/Konata9/jsdoc-vue" target="_blank" rel="noopener">jsdoc-vue 改造版</a><br><img src="http://upload-images.jianshu.io/upload_images/3101443-6df83ab7a3834c37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vue文档截图.png"></p>
+<h5 id="改造的部分主要有以下几点："><a href="#改造的部分主要有以下几点：" class="headerlink" title="改造的部分主要有以下几点："></a>改造的部分主要有以下几点：</h5><ol>
+<li>使用了<code>jsdoc</code>字典，因此可以使用<code>jsdoc</code>自带的标签来进行编写。这样也便于生成需要的模板。</li>
+<li>生成文档采用了<a href="https://github.com/Nijikokun/minami" target="_blank" rel="noopener">minami</a>模板</li>
+<li>升级了 vue-template-complier 和 jsdoc 模块</li>
+</ol>
+<h5 id="安装使用方法"><a href="#安装使用方法" class="headerlink" title="安装使用方法"></a>安装使用方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:Konata9/jsdoc-vue.git</span><br><span class="line"></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>这个改造后的版本我自己用着还算比较满意，比较重要的如<code>props</code>和<code>components</code>组件都可以利用jsdoc自带的语法比较清楚的表示出来。</p>
+<p>如果各位喜欢的话，希望可以点一个star。当然，如果有改进的地方也希望各位可以指点一下。</p>
 
       
     </div>
@@ -403,8 +419,6 @@
           
             <a href="/tags/Vue/" rel="tag"># Vue</a>
           
-            <a href="/tags/vue-router/" rel="tag"># vue-router</a>
-          
         </div>
       
 
@@ -412,6 +426,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/02/router-view 复用时组件不刷新的解决办法/" rel="next" title="router-view 复用时组件不刷新的解决办法">
+                <i class="fa fa-chevron-left"></i> router-view 复用时组件不刷新的解决办法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
@@ -489,7 +519,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -536,6 +566,18 @@
                       <i class="fa fa-fw fa-globe"></i>简书</a>
                 </span>
               
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/Konata9" target="_blank" title="微博">
+                    
+                      <i class="fa fa-fw fa-globe"></i>微博</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://codepen.io/Konata9/" target="_blank" title="codepen">
+                    
+                      <i class="fa fa-fw fa-globe"></i>codepen</a>
+                </span>
+              
             
           </div>
 
@@ -560,7 +602,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用watch方法"><span class="nav-number">1.</span> <span class="nav-text">1. 使用watch方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-添加一个随机数"><span class="nav-number">2.</span> <span class="nav-text">2. 添加一个随机数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#改造的部分主要有以下几点："><span class="nav-number">1.</span> <span class="nav-text">改造的部分主要有以下几点：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装使用方法"><span class="nav-number">2.</span> <span class="nav-text">安装使用方法</span></a></li></ol></div>
             
 
           </div>

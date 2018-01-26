@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[利用jsdoc为vue项目生成漂亮的文档]]></title>
+    <url>%2F2018%2F01%2F26%2F%E5%88%A9%E7%94%A8jsdoc%E4%B8%BAvue%E9%A1%B9%E7%9B%AE%E7%94%9F%E6%88%90%E6%BC%82%E4%BA%AE%E7%9A%84%E6%96%87%E6%A1%A3%2F</url>
+    <content type="text"><![CDATA[jsdoc是前端自动生成文档所常用的工具。我们只要按照jsdoc的语法来书写注释就能顺利的生成一片很漂亮的文档。 只是jsdoc针对的是js文件，对于.vue文件似乎就有些无能为力了。不过既然vue这么人气，相信一定也会有相应的工具。在找了一圈之后，果然找到了一位前辈写的jsdoc-vue。 在研究了一下之后，发现这个工具主要解决了jsdoc不认.vue文件的问题。虽然可以让.vue文件自动生成文档，但生成出的文档样式却并不好看。于是就fork过来改造了一下。 废话不多说，先上一张生成的文档截图。github地址：jsdoc-vue 改造版 改造的部分主要有以下几点： 使用了jsdoc字典，因此可以使用jsdoc自带的标签来进行编写。这样也便于生成需要的模板。 生成文档采用了minami模板 升级了 vue-template-complier 和 jsdoc 模块 安装使用方法123git clone git@github.com:Konata9/jsdoc-vue.gitnpm install 这个改造后的版本我自己用着还算比较满意，比较重要的如props和components组件都可以利用jsdoc自带的语法比较清楚的表示出来。 如果各位喜欢的话，希望可以点一个star。当然，如果有改进的地方也希望各位可以指点一下。]]></content>
+      <categories>
+        <category>前端学习</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[router-view 复用时组件不刷新的解决办法]]></title>
-    <url>%2F2017%2F12%2F02%2FVue%E5%AD%A6%E4%B9%A0-%E5%88%A9%E7%94%A8%E6%8F%92%E6%A7%BD%E5%88%B6%E4%BD%9C%E7%81%B5%E6%B4%BB%E7%9A%84%E7%BB%84%E4%BB%B6%2F</url>
+    <url>%2F2017%2F12%2F02%2Frouter-view%20%E5%A4%8D%E7%94%A8%E6%97%B6%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%88%B7%E6%96%B0%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
     <content type="text"><![CDATA[在使用Vue-router做项目时，会遇到如/serviceId/:id这样只改变id号的场景。由于router-view是复用的，单纯的改变id号并不会刷新router-view，而这并不是我们所期望的结果。 当然，我们可以在点击事件上加上router.go(0)，强制刷新整个页面来满足效果。但页面整体的刷新会使体验下降，并且作为个人也不是很能接受这样的方法。在查阅了一些资料后，发现可以有以下两种方法可以解决问题。 1. 使用watch方法watch方法据说是官方推荐的方法（抱歉，我没好好看文档）。当id发生变化时，’$route’也会相应地发生变化，因此可以通过watch的方法来进行操作。12345678910watch: &#123; '$route': function (to, from) &#123; // console.log(to) // console.log(from) // 我这里还是用了Vuex，不过应该不影响理解 this.$store.dispatch('updateActiveTemplateId', this.$route.params.templateId) // 通过更新Vuex中的store的数据，让数据发生变化 this.getTemplateById() &#125;&#125;, 2. 添加一个随机数通过给router-view添加一个动态变化的参数，让Vue认为这个组件每一次都是一个新组件，从而重新刷新。这个个人感觉是一个十分巧妙和优雅的方法，但是我这次并没有用（捂脸）。具体的实现如下： 123456&lt;router-view :key="key"&gt;&lt;/router-view&gt;computed: &#123; key() &#123; return this.$route.name !== undefined? this.$route.name + +new Date(): this.$route + +new Date() &#125; &#125; 具体的做法可以参考这篇文章：手摸手，带你用vue撸后台 系列一(基础篇)]]></content>
       <categories>
         <category>前端学习</category>
