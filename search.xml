@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[读书笔记：客户端存储技术]]></title>
+    <url>%2F2018%2F02%2F04%2F%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF%2F</url>
+    <content type="text"><![CDATA[最近想自己造一个类似记事本的小轮子。因为感觉没必要用上复杂的后端（同时自己也懒），就打算把数据都交给前端来存储。说到前端存储，最先想到的肯定是localStorage系列（还有sessionStorage），只是localStorage只有读取功能，显然是无法满足我的需求的。 于是打算上网搜索一下相关的技术，期望可以找一个类似于SQLLite的工具。在搜索的过程中，正好发现了这本书《客户端存储技术》。虽然是只有100页左右的小薄本，但对于想要了解一下客户端存储相关技术的我来说正好合适。于是便抽空读了一遍，做了一个简单的读书笔记。 图片看不清的朋友可以直接看我的脑图：客户端存储技术 书中主要介绍了目前常用的客户端存储技术以及各个存储技术的优缺点和适用范围。当然，客户端存储最主要的目的是减轻服务端的压力，而不是去代替服务端存储（毕竟性能和安全性上是是做不到的）。如果是作为小的离线应用的话，倒是不妨可以用一下。 目前客户端存储技术可以简单用下表来总结 编号 技术 说明 类库 1 Cookie 最“古老”的存储方式。通过document.cookie就能进行设置与访问。一般如网站记住登录状态会利用Cookie（会设置过期时间），敏感信息不建议存储在Cookie中。安全系数比较低。 MDN上有相关的类库，可以简化Cookie的操作。 2 LocalStorage/SessionStorage 比较常见的客户端存储。有大小限制5MB。一个域名对应一个Storage，可以持久化的存放一些数据，同样不建议存放敏感信息。 Lockr 3 IndexedDB 无大小限制（理论上）。以对象的形式存放数据（很像MongoDB）。原生API很相对比较复杂，特别是查询部分。使用库可以简化操作。目前对移动端的支持还不是很好（特别是Safari），PC端支持很好。 Dexie、PouchDB 4 WebSQL 比IndexedDB出现时间要早。使用前需要设置数据库大小。具体操作与SQL相同，熟悉SQL就能很快上手。已被废弃的规定。移动端支持不错。 -]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>客户端存储</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[利用jsdoc为vue项目生成漂亮的文档]]></title>
     <url>%2F2018%2F01%2F26%2F%E5%88%A9%E7%94%A8jsdoc%E4%B8%BAvue%E9%A1%B9%E7%9B%AE%E7%94%9F%E6%88%90%E6%BC%82%E4%BA%AE%E7%9A%84%E6%96%87%E6%A1%A3%2F</url>
     <content type="text"><![CDATA[jsdoc是前端自动生成文档所常用的工具。我们只要按照jsdoc的语法来书写注释就能顺利的生成一片很漂亮的文档。 只是jsdoc针对的是js文件，对于.vue文件似乎就有些无能为力了。不过既然vue这么人气，相信一定也会有相应的工具。在找了一圈之后，果然找到了一位前辈写的jsdoc-vue。 在研究了一下之后，发现这个工具主要解决了jsdoc不认.vue文件的问题。虽然可以让.vue文件自动生成文档，但生成出的文档样式却并不好看。于是就fork过来改造了一下。 废话不多说，先上一张生成的文档截图。github地址：jsdoc-vue 改造版 改造的部分主要有以下几点： 使用了jsdoc字典，因此可以使用jsdoc自带的标签来进行编写。这样也便于生成需要的模板。 生成文档采用了minami模板 升级了 vue-template-complier 和 jsdoc 模块 安装使用方法123git clone git@github.com:Konata9/jsdoc-vue.gitnpm install 这个改造后的版本我自己用着还算比较满意，比较重要的如props和components组件都可以利用jsdoc自带的语法比较清楚的表示出来。 如果各位喜欢的话，希望可以点一个star。当然，如果有改进的地方也希望各位可以指点一下。]]></content>
@@ -9,6 +21,7 @@
       </categories>
       <tags>
         <tag>Vue</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>

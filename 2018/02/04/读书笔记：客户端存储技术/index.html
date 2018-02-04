@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="前端,客户端存储," />
 
 
 
@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="普通怪兽此方酱">
-<meta property="og:type" content="website">
-<meta property="og:title" content="此方的秘密基地">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="最近想自己造一个类似记事本的小轮子。因为感觉没必要用上复杂的后端（同时自己也懒），就打算把数据都交给前端来存储。说到前端存储，最先想到的肯定是localStorage系列（还有sessionStorage），只是localStorage只有读取功能，显然是无法满足我的需求的。 于是打算上网搜索一下相关的技术，期望可以找">
+<meta name="keywords" content="前端,客户端存储">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读书笔记：客户端存储技术">
+<meta property="og:url" content="http://yoursite.com/2018/02/04/读书笔记：客户端存储技术/index.html">
 <meta property="og:site_name" content="此方的秘密基地">
-<meta property="og:description" content="普通怪兽此方酱">
+<meta property="og:description" content="最近想自己造一个类似记事本的小轮子。因为感觉没必要用上复杂的后端（同时自己也懒），就打算把数据都交给前端来存储。说到前端存储，最先想到的肯定是localStorage系列（还有sessionStorage），只是localStorage只有读取功能，显然是无法满足我的需求的。 于是打算上网搜索一下相关的技术，期望可以找一个类似于SQLLite的工具。在搜索的过程中，正好发现了这本书《客户端存储技术">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101443-99de9720704b0d56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-02-04T03:16:26.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="此方的秘密基地">
-<meta name="twitter:description" content="普通怪兽此方酱">
+<meta name="twitter:title" content="读书笔记：客户端存储技术">
+<meta name="twitter:description" content="最近想自己造一个类似记事本的小轮子。因为感觉没必要用上复杂的后端（同时自己也懒），就打算把数据都交给前端来存储。说到前端存储，最先想到的肯定是localStorage系列（还有sessionStorage），只是localStorage只有读取功能，显然是无法满足我的需求的。 于是打算上网搜索一下相关的技术，期望可以找一个类似于SQLLite的工具。在搜索的过程中，正好发现了这本书《客户端存储技术">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3101443-99de9720704b0d56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/04/读书笔记：客户端存储技术/"/>
 
 
 
 
 
-  <title>归档 | 此方的秘密基地</title>
+  <title>读书笔记：客户端存储技术 | 此方的秘密基地</title>
   
 
 
@@ -143,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,111 +285,211 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 3 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/04/读书笔记：客户端存储技术/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吃土的小此方">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="此方的秘密基地">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/02/04/读书笔记：客户端存储技术/" itemprop="url">
-              
-                <span itemprop="name">读书笔记：客户端存储技术</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">读书笔记：客户端存储技术</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-04T11:10:13+08:00"
-              content="2018-02-04" >
-          02-04
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T11:10:13+08:00">
+                2018-02-04
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/26/利用jsdoc为vue项目生成漂亮的文档/" itemprop="url">
-              
-                <span itemprop="name">利用jsdoc为vue项目生成漂亮的文档</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-26T15:19:40+08:00"
-              content="2018-01-26" >
-          01-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>最近想自己造一个类似记事本的小轮子。因为感觉没必要用上复杂的后端（同时自己也懒），就打算把数据都交给前端来存储。说到前端存储，最先想到的肯定是localStorage系列（还有sessionStorage），只是localStorage只有读取功能，显然是无法满足我的需求的。</p>
+<p>于是打算上网搜索一下相关的技术，期望可以找一个类似于SQLLite的工具。在搜索的过程中，正好发现了这本书《<a href="http://www.ituring.com.cn/book/1836" target="_blank" rel="noopener">客户端存储技术</a>》。虽然是只有100页左右的小薄本，但对于想要了解一下客户端存储相关技术的我来说正好合适。于是便抽空读了一遍，做了一个简单的读书笔记。</p>
+<a id="more"></a>
+<p><img src="http://upload-images.jianshu.io/upload_images/3101443-99de9720704b0d56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="客户端存储技术.png"><br>图片看不清的朋友可以直接看我的脑图：<a href="http://www.ituring.com.cn/book/1836" target="_blank" rel="noopener">客户端存储技术</a></p>
+<p>书中主要介绍了目前常用的客户端存储技术以及各个存储技术的优缺点和适用范围。<br>当然，客户端存储最主要的目的是减轻服务端的压力，而不是去代替服务端存储（毕竟性能和安全性上是是做不到的）。如果是作为小的离线应用的话，倒是不妨可以用一下。</p>
+<h4 id="目前客户端存储技术可以简单用下表来总结"><a href="#目前客户端存储技术可以简单用下表来总结" class="headerlink" title="目前客户端存储技术可以简单用下表来总结"></a>目前客户端存储技术可以简单用下表来总结</h4><table>
+<thead>
+<tr>
+<th>编号</th>
+<th>技术</th>
+<th>说明</th>
+<th>类库</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Cookie</td>
+<td>最“古老”的存储方式。通过document.cookie就能进行设置与访问。一般如网站记住登录状态会利用Cookie（会设置过期时间），敏感信息不建议存储在Cookie中。安全系数比较低。</td>
+<td>MDN上有相关的类库，可以简化Cookie的操作。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>LocalStorage/SessionStorage</td>
+<td>比较常见的客户端存储。有大小限制5MB。一个域名对应一个Storage，可以持久化的存放一些数据，同样不建议存放敏感信息。</td>
+<td>Lockr </td>
+</tr>
+<tr>
+<td>3</td>
+<td>IndexedDB</td>
+<td>无大小限制（理论上）。以对象的形式存放数据（很像MongoDB）。原生API很相对比较复杂，特别是查询部分。使用库可以简化操作。目前对移动端的支持还不是很好（特别是Safari），PC端支持很好。</td>
+<td>Dexie、PouchDB</td>
+</tr>
+<tr>
+<td>4</td>
+<td>WebSQL</td>
+<td>比IndexedDB出现时间要早。使用前需要设置数据库大小。具体操作与SQL相同，熟悉SQL就能很快上手。已被废弃的规定。移动端支持不错。</td>
+<td>- </td>
+</tr>
+</tbody>
+</table>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/客户端存储/" rel="tag"># 客户端存储</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/26/利用jsdoc为vue项目生成漂亮的文档/" rel="next" title="利用jsdoc为vue项目生成漂亮的文档">
+                <i class="fa fa-chevron-left"></i> 利用jsdoc为vue项目生成漂亮的文档
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -393,6 +497,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -413,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -506,6 +623,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#目前客户端存储技术可以简单用下表来总结"><span class="nav-number">1.</span> <span class="nav-text">目前客户端存储技术可以简单用下表来总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -646,6 +779,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
