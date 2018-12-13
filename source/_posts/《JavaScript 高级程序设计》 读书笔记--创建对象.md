@@ -1,5 +1,5 @@
 ---
-title: 《JavaScript 高级程序设计》 读书笔记--创建对象的演化
+title: 《JavaScript 高级程序设计》 读书笔记--创建对象方法的演化
 date: 2018-12-11 21:30:25
 categories: 前端学习
 tags:
