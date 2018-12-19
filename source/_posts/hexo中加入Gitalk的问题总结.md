@@ -48,4 +48,4 @@ gitalk.render('gitalk-container')
 ```
 
 这么一来，我们重新编译就能解决 Gitalk 的问题了。这样一来，就可以愉快地让来看博客的人发表评论了～效果如下：
-![](./../images/gitalk-sample.png)
+![](/images/gitalk-sample.png)
