@@ -125,8 +125,94 @@ kizunaai.name // 'kizunaai'
 luna.name // 'luna'
 ```
 
-其实再想一下，构造函数的方法其实真的是继承吗？我们在 Chrome 中分别打印一下之前的实例。
+我们在 Chrome 中分别打印一下之前的实例。可以看到 `VTuber` 的实例只是包含了 `Person` 的属性而已，而在原型链上两者是没有任何关系的。
 ![](/images/constructor2.png)
 
+所以再想一下，构造函数的方法其实真的是“继承”吗？因为对于“子类”来说，是没有办法**调用父类原型**上的方法的。而在用构造函数创建对象时我们就已经知道，把方法写在构造函数里显然不是一个好的解决方法。
+
 ### 3. 组合式继承
-### 4. 寄生式继承
+既然原型链和构造函数正好能弥补互相之间的缺陷，组合起来我们能愉快地进行继承了。也没什么新的知识点，就直接上代码了。
+
+```javaScript
+function Person(name, age, sex){
+  this.name = name
+  this.age = age
+  this.sex = sex
+}
+
+Person.prototype.sayHello = function(){
+  return `${this.name} say hello ~`
+}
+
+function VTuber(name, age, sex){
+  // 构造函数保证了不同值的传递
+  Person.call(this, name, age, sex)
+}
+
+// 原型链保证了方法的传递（还有意义上）
+VTuber.prototype = new Person()
+VTuber.prototype.constructor = VTuber
+
+var kizunaai = new VTuber('kizunaai', 2, 'female')
+var luna = new VTuber('luna', 100, 'female')
+
+kizunaai.name // 'kizunaai'
+luna.sayHello() // 'luna say hello ~'
+```
+
+### 4. 寄生组合式继承
+组合式继承是我们最常用的继承方法，几乎可以说是满足了我们的需求。硬要挑刺的话，也就是父类的构造函数调用两次的问题了。
+```javaScript
+// 以之前的代码为例
+// 第一次在子类的构造函数中调用
+Person.call(this, name, age, sex)
+
+// 第二次在建立原型链时调用
+VTuber.prototype = new Person()
+```
+
+其中第一次是一定省不掉的，要下功夫的话就是在第二次建立原型链的时候了。还是以前面的代码为例，我们就这么继承，数据结构会是怎么样的？
+![](/images/combine.png)
+
+可以看到在 `VTuber.prototype` 上也有 `name, age, sex` 三个属性，但实际上这三个属性根本没有意义。那么解决的思路就有了，我们需要借助一个空的对象来搭一座桥。（千万别说让 `VTuber.prototype = Person.prototype` 了，理由参考原型链那部分）
+
+```javaScript
+function Person(name, age, sex){
+  this.name = name
+  this.age = age
+  this.sex = sex
+}
+
+Person.prototype.sayHello = function(){
+  return `${this.name} say hello ~`
+}
+
+function VTuber(name, age, sex){
+  // 构造函数保证了不同值的传递
+  Person.call(this, name, age, sex)
+}
+
+// 我们要借用一个空对象作为过渡
+// VTuber.prototype = new Person()
+function A(){}
+A.prototype = Person.prototype
+VTuber.prototype = new A()
+
+VTuber.prototype.constructor = VTuber
+
+var kizunaai = new VTuber('kizunaai', 2, 'female')
+var luna = new VTuber('luna', 100, 'female')
+
+kizunaai.name // 'kizunaai'
+luna.sayHello() // 'luna say hello ~'
+```
+
+上面我们借用了一个 `A` 来打了个桥。这样一来就在原型链上就没有多余的属性了。（其实两次构造函数是肯定要调的，只是第二次调谁的问题）
+![](/images/combine2.png)
+
+而这种搭桥的方式，在“高程”中也被称为是原型式继承。其中关于原型式和寄生式分别和原型链、构造函数相对应，感觉没有这两种直观而且也不常用（个人感觉）所以就不做展开了，有兴趣的小伙伴还是推荐去阅读“高程”。
+
+### 小结
+至此，有关于继承的笔记就到此为止。这一篇顺着对象的原型链的概念开始，介绍了 JavaScript 中对象继承的几种方式。其中组合继承的方式是我们最常见也是用的最广的，我们需要好好了解一下。
+
+在看书的过程中，像这样给自己抛点问题，找一找方法间的演变脉络即很有趣也很容易理解。不知道各位小伙伴有什么好的学习方法呢？不妨互相交流一下吧～
