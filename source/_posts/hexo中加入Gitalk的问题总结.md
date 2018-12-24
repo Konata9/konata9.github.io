@@ -28,7 +28,7 @@ var gitalk = new Gitalk({
   owner: 'GitHub repo owner',
   admin: ['GitHub repo owner and collaborators, only these guys can initialize github issues'],
   //id: location.pathname 官方文档代码。由于 GitHub Issue Label 50 个字符的长度的限制，直接引用的话页面就会报 422 错误因此需要把这里 md5 化
-  id: md5(location.pathname)     
+  id: md5(location.pathname),    
   distractionFreeMode: false 
 })
 
