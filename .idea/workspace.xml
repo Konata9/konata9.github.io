@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60337ff6-5e9c-4234-b246-4be8996927a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/source/_posts/hexo中加入Gitalk的问题总结.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/hexo中加入Gitalk的问题总结.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/next" beforeDir="false" afterPath="$PROJECT_DIR$/themes/next" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/next/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/next/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/next/gulpfile.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/themes/next/gulpfile.coffee" afterDir="false" />
@@ -65,6 +64,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -81,7 +81,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -116,11 +115,12 @@
       <workItem from="1545453881020" duration="202000" />
       <workItem from="1545454099810" duration="261000" />
       <workItem from="1545454372094" duration="571000" />
+      <workItem from="1545663215895" duration="39000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3053000" />
+    <option name="totallyTimeSpent" value="3092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
