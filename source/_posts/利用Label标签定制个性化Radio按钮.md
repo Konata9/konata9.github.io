@@ -13,7 +13,7 @@ tags:
 </div>
 
 在最近的项目中，遇到了类似下图的单选按钮。
-![](/images/pay-radio.png)
+![](/images/pay-radio.jpg)
 
 Radio 按钮的默认样式并不好看，经常成为被修改样式的对象。而常用的 antd 中，Radio 组件也没有提供可用于自定义的属性。当然，这些是难不倒各位前端小伙伴的，只要利用好 `label` 标签就能很简单地实现一个个性化 Radio 按钮组件。
 
@@ -24,7 +24,7 @@ CSS3 目前基本都得到了支持，所以配合 CSS3 就能减少我们在 JS
 - `::before/after` 伪元素的使用
 
 实际完成的效果如下图（由于偷懒，很多就用文字代替了）：
-![](/images/radio-example.png)
+![](/images/radio-example.jpg)
 
 <!-- more -->
 
