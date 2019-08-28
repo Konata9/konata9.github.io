@@ -26,6 +26,8 @@ CSS3 目前基本都得到了支持，所以配合 CSS3 就能减少我们在 JS
 实际完成的效果如下图（由于偷懒，很多就用文字代替了）：
 ![](/images/radio-example.png)
 
+<!-- more -->
+
 想看代码的小伙伴也可以来这里：[利用 Label 定制个性化 Radio 按钮](https://codepen.io/Konata9/pen/QWLvEyb?editors=0111)
 
 整个 Radio 的核心思想，就是利用 `label` 与 radio 的互相关联。这样在点击 `label` 的时候，radio 按钮也会跟着联动。`label` 与表单控件的关联分为显示和隐式两种。显示即我们熟悉的 `for` 属性关联表单控件的 `id`，而隐式则是把表单控件包裹在 `label` 标签中。在我们的例子中，采用的是隐式关联的方法。
