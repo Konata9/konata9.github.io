@@ -1,0 +1,757 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Konata">
+  <meta name="keywords" content="此方,Konata,Konata9,博客,分享,记录,技术">
+  
+    <meta name="description" content="假期里看了半佛老师的你不知道的互联网30年秘史，回顾了中国互联网澎湃的历史。回味之余也想起了自己在日本的工作经历，就莫名联想到了互联网的裁员风波与日本的官僚制度，于是便有了这篇博客。因此 本文纯为个人兴起而作，随想成分较大，仅供参考，欢迎小伙伴们来交流。 官僚下凡与日本的官僚制度 官僚下凡：特指离职后的中央高级官僚接受再就职斡旋，以便获得其出身部委所管辖的外围团体、关联企业、独立行政法人、国立大学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从日本官僚制随想互联网 35 岁裁员">
+<meta property="og:url" content="https://konta9.github.io/2020/02/04/2020/%E4%BB%8E%E6%97%A5%E6%9C%AC%E5%AE%98%E5%83%9A%E5%88%B6%E9%9A%8F%E6%83%B3%E4%BA%92%E8%81%94%E7%BD%91%2035%20%E5%B2%81%E8%A3%81%E5%91%98/index.html">
+<meta property="og:site_name" content="此方的秘密基地">
+<meta property="og:description" content="假期里看了半佛老师的你不知道的互联网30年秘史，回顾了中国互联网澎湃的历史。回味之余也想起了自己在日本的工作经历，就莫名联想到了互联网的裁员风波与日本的官僚制度，于是便有了这篇博客。因此 本文纯为个人兴起而作，随想成分较大，仅供参考，欢迎小伙伴们来交流。 官僚下凡与日本的官僚制度 官僚下凡：特指离职后的中央高级官僚接受再就职斡旋，以便获得其出身部委所管辖的外围团体、关联企业、独立行政法人、国立大学">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-04T09:02:35.000Z">
+<meta property="article:modified_time" content="2024-01-01T14:28:43.282Z">
+<meta property="article:author" content="Konata">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="求职">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>从日本官僚制随想互联网 35 岁裁员 - 此方的秘密基地</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"konta9.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":"G-HZE2KZXTWN"},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"BirbQk2IcLjcATgSrzYGJHe7-MdYXbMMI","app_key":"WrRy9Sjv7hCFj1jO9Tm10BYi","server_url":"https://birbqk2i.api.lncldglobal.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-HZE2KZXTWN", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-HZE2KZXTWN');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="此方的秘密基地" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>此方的秘密基地</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/atom.xml" target="_self">
+                <i class="iconfont icon-rss-fill"></i>
+                <span>RSS</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://konata9.github.io/en/" target="_self">
+                <i class="iconfont icon-message-multi-language-fill"></i>
+                <span>English</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="从日本官僚制随想互联网 35 岁裁员"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-02-04 17:02" pubdate>
+          2020年2月4日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">从日本官僚制随想互联网 35 岁裁员</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>假期里看了半佛老师的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av84552259">你不知道的互联网30年秘史</a>，回顾了中国互联网澎湃的历史。回味之余也想起了自己在日本的工作经历，就莫名联想到了互联网的裁员风波与日本的官僚制度，于是便有了这篇博客。因此 <strong>本文纯为个人兴起而作，随想成分较大，仅供参考，欢迎小伙伴们来交流。</strong></p>
+<h2 id="官僚下凡与日本的官僚制度"><a href="#官僚下凡与日本的官僚制度" class="headerlink" title="官僚下凡与日本的官僚制度"></a>官僚下凡与日本的官僚制度</h2><blockquote>
+<p>官僚下凡：特指离职后的中央高级官僚接受再就职斡旋，以便获得其出身部委所管辖的外围团体、关联企业、独立行政法人、国立大学法人以及特殊法人等机构的高级职位。</p>
+</blockquote>
+<p>在学习日语的时候，老师曾简单地介绍过日本的官僚制度。俗话说 “一人得道，鸡犬升天”，然而在日本公务员中却是相反的情况。同期（同一时间进入政府机构的人）的公务员只有 1 人能晋升局至级以上职位，其余人则会被劝退。只是在拥有终身雇用制文化的日本，人事部门在奖励被劝退的人一笔可观的退职金之外，还要为他们安排再就业岗位。这些被劝退的公务员由于精通管理并且在政商两界拥有大量的人脉，自然也受到民间企业的青睐。一般都能在关联企业中，担任高管。对于日本的公务员来说，“升天” 还是 “下凡” 或许都不错。</p>
+<span id="more"></span>
+
+<p>在 ”论资排辈，等级森严“ 的日本，一起进公司的同期成了自己的顶头上司，对双方来说今后的工作都会成为一个难题。管理者该如何管理？下面的人又会否不服呢？“官僚下凡” 的制度就在某种程度上解决了这一个问题。那么再回过来看看国内。</p>
+<h2 id="30-年与-35-岁"><a href="#30-年与-35-岁" class="headerlink" title="30 年与 35 岁"></a>30 年与 35 岁</h2><p>自 <strong>2017</strong> 年华为 “集中清理34岁以上交付工程维护员工” 风波之后，35 岁对于互联网人来说成为了一道坎。 尽管华为事后否认此事，但从近年来知乎、京东、阿里等各大厂的 “结构优化” 与 “向社会输出优秀人才” 的情况来看，这似乎是业界默认的事实。这里的 <strong>2017</strong> 年是一个需要记住的时间点。</p>
+<blockquote>
+<p>以史为鉴，可以知兴替</p>
+</blockquote>
+<p>自 2000 年新浪、搜狐、网易在美国上市，互联网终于开始爆发。2002 年门户网站开启了第一波热潮，2011 年移动端领域兴起。随后，2013 年至 2017 年，O2O 大战开启，互联网迎来了黄金时代。对年份敏感的小伙伴可能察觉到了，如果一个本科应届生在 2000 年左右加入互联网，那么在 2017 年大概在 40 岁左右。顺带一提，去年的 “251” 事件的受害者也是 41 岁。</p>
+<p>“再无风清扬，再有少年郎” 30 年浪潮之后，互联网相对传统行业依旧年轻。顶端的大佬早已无人不知，只是在金字塔形的公司架构里，那些没能晋升的同龄人是否也会被 “下凡” 呢？</p>
+<h2 id="现实往往更加复杂。"><a href="#现实往往更加复杂。" class="headerlink" title="现实往往更加复杂。"></a>现实往往更加复杂。</h2><p>互联网的黄金时代中，换工作工资就能翻一倍是确实存在的事实。“官僚下凡” 尽管在形式上与互联网的裁员相似，但公务员与资本终究是不同的。被 “下凡” 的官僚拥有丰富的从政管理经验以及人脉而被企业青睐，而经历了互联网黄金时代的人却只有着高薪。技术圈的变化之快也让这些人在技术经验上，不占优势。</p>
+<p>资本是逐利的，而国内互联网 996 的风气也让这项脑力劳动趋近于体力劳动。那么，在偏基础的职位上为什么不用薪资更低的年轻人呢？被 “下凡” 的人也又该如何转身呢？</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a target="_blank" rel="noopener" href="http://www.sirpa.shisu.edu.cn/d0/48/c270a118856/page.htm">俞祖成：日本的官僚制与“官僚下凡”</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av84552259">你不知道的互联网30年秘史</a></li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/" class="category-chain-item">随想杂谈</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/" class="print-no-link">#程序员</a>
+      
+        <a href="/tags/%E6%B1%82%E8%81%8C/" class="print-no-link">#求职</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>从日本官僚制随想互联网 35 岁裁员</div>
+      <div>https://konta9.github.io/2020/02/04/2020/从日本官僚制随想互联网 35 岁裁员/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Konata</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2020年2月4日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/02/14/2020/%E8%AF%91_%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E5%81%9A%E5%A5%BD%E4%BD%8E%E6%94%B6%E5%85%A5%E7%9A%84%E5%87%86%E5%A4%87/" title="译：程序员该做好低收入的准备">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">译：程序员该做好低收入的准备</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/01/31/2020/%E5%B7%A5%E4%BD%9C%207%20%E5%B9%B4%E7%9A%84%E4%BA%9B%E8%AE%B8%E6%84%9F%E6%82%9F/" title="工作 7 年的些许感悟">
+                        <span class="hidden-mobile">工作 7 年的些许感悟</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script>
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          Fluid.utils.createCssLink('https://lib.baomitu.com/disqusjs/1.3.0/disqusjs.css');
+          Fluid.utils.createScript('https://lib.baomitu.com/disqusjs/1.3.0/disqus.js', function() {
+            new DisqusJS({
+              shortname: 'konata-blog',
+              apikey: 'AlTcCrDugoy7nYInPZA5SdHFdvQxfiUdMNuifiFG54hy9yqNHkj7wUrRFuJXmBrv'
+            });
+          });
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

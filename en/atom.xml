@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Konata&#39;s Secret Base</title>
+  <icon>https://konta9.github.io/en/icon.png</icon>
+  <subtitle>Konata&#39;s Blog</subtitle>
+  <link href="https://konta9.github.io/en/atom.xml" rel="self"/>
+  
+  <link href="https://konta9.github.io/en/"/>
+  <updated>2024-03-02T08:31:15.950Z</updated>
+  <id>https://konta9.github.io/en/</id>
+  
+  <author>
+    <name>Konata</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Implementing a Simple Direction Animation with Vue3</title>
+    <link href="https://konta9.github.io/en/2024/02/28/2024/a-simple-direction-animation-by-vue3/"/>
+    <id>https://konta9.github.io/en/2024/02/28/2024/a-simple-direction-animation-by-vue3/</id>
+    <published>2024-02-28T14:59:37.000Z</published>
+    <updated>2024-03-02T08:31:15.950Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Implementing-a-Simple-Direction-Animation-with-Vue3&quot;&gt;&lt;a href=&quot;#Implementing-a-Simple-Direction-Animation-with-Vue3&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Front-end Learning" scheme="https://konta9.github.io/en/categories/Front-end-Learning/"/>
+    
+    
+    <category term="Vue" scheme="https://konta9.github.io/en/tags/Vue/"/>
+    
+    <category term="Front-end" scheme="https://konta9.github.io/en/tags/Front-end/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Improving Git Flow for Managing Private TypeScript Dependencies on Bitbucket</title>
+    <link href="https://konta9.github.io/en/2024/02/11/2024/improve-git-flow-to-manage-ts-dependency-on-bitbucket-as-private-npm/"/>
+    <id>https://konta9.github.io/en/2024/02/11/2024/improve-git-flow-to-manage-ts-dependency-on-bitbucket-as-private-npm/</id>
+    <published>2024-02-11T08:04:03.000Z</published>
+    <updated>2024-02-12T03:36:10.740Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;In our current workflow, Bitbucket serves both as a code repository and a private NPM repository. Installing dependencies via</summary>
+        
+      
+    
+    
+    
+    <category term="Program learning" scheme="https://konta9.github.io/en/categories/Program-learning/"/>
+    
+    
+    <category term="git" scheme="https://konta9.github.io/en/tags/git/"/>
+    
+    <category term="npm" scheme="https://konta9.github.io/en/tags/npm/"/>
+    
+    <category term="nodejs" scheme="https://konta9.github.io/en/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo i18n support transformation</title>
+    <link href="https://konta9.github.io/en/2024/01/17/2024/update-hexo-i18n/"/>
+    <id>https://konta9.github.io/en/2024/01/17/2024/update-hexo-i18n/</id>
+    <published>2024-01-17T15:44:08.000Z</published>
+    <updated>2024-01-20T14:14:28.405Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;In my work, most of the documents I search and refer to are in English. So, I thought of update my blog to support multiple languages,</summary>
+        
+      
+    
+    
+    
+    <category term="Program learning" scheme="https://konta9.github.io/en/categories/Program-learning/"/>
+    
+    
+    <category term="hexo" scheme="https://konta9.github.io/en/tags/hexo/"/>
+    
+    <category term="i18n" scheme="https://konta9.github.io/en/tags/i18n/"/>
+    
+  </entry>
+  
+</feed>

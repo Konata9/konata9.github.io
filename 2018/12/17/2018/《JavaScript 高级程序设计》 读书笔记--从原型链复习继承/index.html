@@ -1,0 +1,799 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Konata">
+  <meta name="keywords" content="此方,Konata,Konata9,博客,分享,记录,技术">
+  
+    <meta name="description" content="这一篇进入正题来复习一下 JavaScript 中对象的继承。“高程”中一共列举了 6 种继承的方式。看起来是有些吓人，但仔细梳理就能发现其中也是有一个演变过程的。这篇笔记就是我自己对这个过程的理解。如果有不足的地方，还希望各位可以指出。 再次安利一下“高程”，真的写得非常棒。有一定基础和项目经验的同学绝对要去看一看，能提高不少。 基础概念在进入继承之前，我们再把一些基本概念复习一下。 0. 构造">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《JavaScript 高级程序设计》 读书笔记--从原型链复习继承">
+<meta property="og:url" content="https://konta9.github.io/2018/12/17/2018/%E3%80%8AJavaScript%20%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%8B%20%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0--%E4%BB%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%A4%8D%E4%B9%A0%E7%BB%A7%E6%89%BF/index.html">
+<meta property="og:site_name" content="此方的秘密基地">
+<meta property="og:description" content="这一篇进入正题来复习一下 JavaScript 中对象的继承。“高程”中一共列举了 6 种继承的方式。看起来是有些吓人，但仔细梳理就能发现其中也是有一个演变过程的。这篇笔记就是我自己对这个过程的理解。如果有不足的地方，还希望各位可以指出。 再次安利一下“高程”，真的写得非常棒。有一定基础和项目经验的同学绝对要去看一看，能提高不少。 基础概念在进入继承之前，我们再把一些基本概念复习一下。 0. 构造">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://konta9.github.io/images/prototype.png">
+<meta property="og:image" content="https://konta9.github.io/images/prototype2.png">
+<meta property="og:image" content="https://konta9.github.io/images/prototype3.png">
+<meta property="og:image" content="https://konta9.github.io/images/prototype4.png">
+<meta property="og:image" content="https://konta9.github.io/images/constructor.png">
+<meta property="og:image" content="https://konta9.github.io/images/constructor2.png">
+<meta property="og:image" content="https://konta9.github.io/images/combine.png">
+<meta property="og:image" content="https://konta9.github.io/images/combine2.png">
+<meta property="article:published_time" content="2018-12-17T14:46:30.000Z">
+<meta property="article:modified_time" content="2024-01-01T14:28:43.266Z">
+<meta property="article:author" content="Konata">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://konta9.github.io/images/prototype.png">
+  
+  
+  
+  <title>《JavaScript 高级程序设计》 读书笔记--从原型链复习继承 - 此方的秘密基地</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"konta9.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":"G-HZE2KZXTWN"},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"BirbQk2IcLjcATgSrzYGJHe7-MdYXbMMI","app_key":"WrRy9Sjv7hCFj1jO9Tm10BYi","server_url":"https://birbqk2i.api.lncldglobal.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-HZE2KZXTWN", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-HZE2KZXTWN');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="此方的秘密基地" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>此方的秘密基地</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/atom.xml" target="_self">
+                <i class="iconfont icon-rss-fill"></i>
+                <span>RSS</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://konata9.github.io/en/" target="_self">
+                <i class="iconfont icon-message-multi-language-fill"></i>
+                <span>English</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="《JavaScript 高级程序设计》 读书笔记--从原型链复习继承"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2018-12-17 22:46" pubdate>
+          2018年12月17日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          28 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">《JavaScript 高级程序设计》 读书笔记--从原型链复习继承</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>这一篇进入正题来复习一下 JavaScript 中对象的继承。“高程”中一共列举了 6 种继承的方式。看起来是有些吓人，但仔细梳理就能发现其中也是有一个演变过程的。这篇笔记就是我自己对这个过程的理解。如果有不足的地方，还希望各位可以指出。</p>
+<p>再次安利一下“高程”，真的写得非常棒。有一定基础和项目经验的同学绝对要去看一看，能提高不少。</p>
+<h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><p>在进入继承之前，我们再把一些基本概念复习一下。</p>
+<h3 id="0-构造函数、原型对象、实例"><a href="#0-构造函数、原型对象、实例" class="headerlink" title="0. 构造函数、原型对象、实例"></a>0. 构造函数、原型对象、实例</h3><p>谈到对象，一定会出现这三个概念。在 JavaScript 中，<strong>原型对象</strong>不需要我们手动去定义，当我们定义一个类或者构造函数后，JavaScript 会自动生成对应的原型对象，我们可以通过 <code>prototype</code> 属性访问；我们写的 <code>function A()&#123;&#125;</code> 就是<strong>构造函数</strong>；而我们<strong>用 <code>new</code> 调用构造函数返回的值就是对象的实例</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javaScript"><span class="hljs-comment">// 构造函数：其实就是一般的函数。函数名大写只是一个约定规则而已。</span><br><span class="hljs-comment">// 事实上除了 new 之外，我们也可以像调用一般的函数一样使用。</span><br><span class="hljs-comment">// 在 ES6 中就是 Class 里面的 constructor</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">A</span>(<span class="hljs-params"></span>)&#123;<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">a</span> = <span class="hljs-string">&#x27;a&#x27;</span><br>&#125;<br><br><span class="hljs-comment">// 原型对象：当我们定义对象的时候，就会生成一个对应的原型对象。</span><br><span class="hljs-comment">// 该函数的 prototype 属性就指向原型对象，这个就是原型链的精髓。</span><br>A.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span><br><br><span class="hljs-comment">// 实例: 用 new 调用构造函数的返回值。</span><br><span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> <span class="hljs-title function_">A</span>()<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-原型链"><a href="#1-原型链" class="headerlink" title="1. 原型链"></a>1. 原型链</h3><p>下面再来看一下原型链的概念。原型链的概念我们一定不会陌生。那么就不多说了，直接上图。这是一个最基本的原型链，我们要仔细理解这张图并且搞清楚 <strong>实例</strong>、<strong>对象原型</strong>、<strong>构造函数</strong>以及与 <code>Object</code> 之间的关系。<br><img src="/images/prototype.png" srcset="/img/loading.gif" lazyload></p>
+<p>在复习完上面两个概念之后（特别是原型链），相信在后面理解继承的时候会有所帮助。如果在后面有所困惑的话，不妨回来看看基础概念。</p>
+<p>下面就开始进入正题。</p>
+<span id="more"></span>
+
+<hr>
+<h2 id="JavaScript-中的继承"><a href="#JavaScript-中的继承" class="headerlink" title="JavaScript 中的继承"></a>JavaScript 中的继承</h2><h3 id="1-原型链继承"><a href="#1-原型链继承" class="headerlink" title="1. 原型链继承"></a>1. 原型链继承</h3><p>我们对上面基础的例子做一个拓展。再加入一个对象 <code>B</code>，我们同样画成图。<br><img src="/images/prototype2.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>A</code> 和 <code>B</code> 是互相独立的两个对象（类），并且它们都是 <strong>继承</strong> 了 JavaScript 的对象之祖——<code>Object</code>对象。请注意，在一般的对象中，就已经存在了一个 <strong>对象</strong> 与 <strong><code>Object</code>对象</strong> 的继承关系了。</p>
+<p>那么现在我们要让对象<code>B</code>去继承对象<code>A</code>，就可以模仿对象和<code>Object</code>的关系，修改<code>B</code>的原型对象的指向。<br><img src="/images/prototype3.png" srcset="/img/loading.gif" lazyload></p>
+<p>这么一来，<code>B</code>就可以顺着原型链访问到<code>A</code>了。由于现在<code>B.prototype = A.prototype</code>了，那么在<code>B.prototype</code>上做的任何修改都会影响到<code>A.prototype</code>了。所以我们再稍微调整一下，让 <code>B.prototype = new A()</code> 。</p>
+<p>这样，完整的原型链继承的关系图就出来了。<br><img src="/images/prototype4.png" srcset="/img/loading.gif" lazyload></p>
+<p>简单的示例代码如下，小伙伴们可以在 Chrome 中试玩一下。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">A</span>(<span class="hljs-params"></span>)&#123; <span class="hljs-variable language_">this</span>.<span class="hljs-property">a</span> = <span class="hljs-string">&#x27;a&#x27;</span> &#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">B</span>(<span class="hljs-params"></span>)&#123; <span class="hljs-variable language_">this</span>.<span class="hljs-property">b</span> = <span class="hljs-string">&#x27;b&#x27;</span> &#125;<br><br><span class="hljs-comment">// 不要这么做，因为修改 B 的 prototype 会影响 A 的 prototype</span><br><span class="hljs-comment">// B.prototype = A.prototype</span><br>B.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_">A</span>()<br>B.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">constructor</span> = B<br></code></pre></td></tr></table></figure>
+
+<h4 id="对象的-constructor"><a href="#对象的-constructor" class="headerlink" title="对象的 constructor"></a>对象的 constructor</h4><p>在上面的示例代码中，最后一行我们对对象 B 的构造函数重新进行了赋值。这是因为，当我们改变了 <code>B.prototype</code> 的时候，会切断原来 B 的构造函数与 <code>B.prototype</code> 之间的联系。</p>
+<p>虽然这个属性对我们的继承关系没有影响（<code>instanceof</code> 方法结果仍然正确）。但是从代码含义上来说，我们最好还是修改称为正确的指向。</p>
+<p>另外，对于实例来说 <code>a.constructor.prototype === A.prototype // true</code>。即我们可以通过实例的构造函数去给对象原型添加属性和方法。尽管没人会推荐我们这么去做，但让属性指向正确的值会比较好。</p>
+<p>和对象的创建一样，原型链的方法是比较简单的。但是也有一个明显的缺陷，就是“无法”对父类传不同的值。即 <code>B.prototype = new A(xx)</code> 时之后所有的 B 的示例都会带上这个值，因此就产生了局限性。</p>
+<p>回想一下在创建对象时，我们是怎么解决这个问题的？</p>
+<h3 id="2-构造函数继承"><a href="#2-构造函数继承" class="headerlink" title="2. 构造函数继承"></a>2. 构造函数继承</h3><p>在创建对象时，我们知道不同的实例在创建时只要向构造函数中传入不同的值，就会得到不同的值。那么回到继承上，为了解决原型链继承无法向父类传递不同值的问题，我们同样也需要借助构造函数。</p>
+<p>在进入正题前，我们再看一下构造函数，然后想一下如果<strong>不用 new 调用构造函数会是怎样？</strong><br>下面是一个 <code>Person</code> 的构造函数。一般来说我们使用 <code>new</code> 关键字创建 <code>Person</code> 的实例。但是有没有想过，构造函数也是函数，如果我们不用 <code>new</code> 而是普通地调用会是怎么情况呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Person</span>(<span class="hljs-params">name, age, sex</span>)&#123;<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">age</span> = age<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">sex</span> = sex<br>&#125;<br><br><span class="hljs-comment">// 直接调用会是怎么情况呢？</span><br><span class="hljs-title class_">Person</span>(<span class="hljs-string">&#x27;Kizunaai&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;female&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<p>熟悉 <code>this</code> 特性的小伙伴肯定能反应过来。独立调用函数时，若在非严格模式下，<code>this</code> 指向的是 <code>window</code>（浏览器环境）。那么我们看一下 <code>window</code>。<br><img src="/images/constructor.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>window</code> 中果然就有了 <code>age</code> 这个属性，并且值为 2。也就是说，直接调用构造函数就相当于把构造函数中的属性赋给调用它的对象了。</p>
+<p>好，趁热打铁，我们直接来看代码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs javaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Person</span>(<span class="hljs-params">name, age, sex</span>)&#123;<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">age</span> = age<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">sex</span> = sex<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">VTuber</span>(<span class="hljs-params">name, age, sex</span>)&#123;<br>  <span class="hljs-comment">// 调用 Person 的构造函数实际上就是把 Person 的值赋给 VTuber</span><br>  <span class="hljs-comment">// 在 ES6 中就是 super()</span><br>  <span class="hljs-title class_">Person</span>.<span class="hljs-title function_">call</span>(<span class="hljs-variable language_">this</span>, name, age, sex)<br>&#125;<br><br><span class="hljs-keyword">var</span> kizunaai = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VTuber</span>(<span class="hljs-string">&#x27;kizunaai&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;female&#x27;</span>)<br><span class="hljs-keyword">var</span> luna = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VTuber</span>(<span class="hljs-string">&#x27;luna&#x27;</span>, <span class="hljs-number">100</span>, <span class="hljs-string">&#x27;female&#x27;</span>)<br><br>kizunaai.<span class="hljs-property">name</span> <span class="hljs-comment">// &#x27;kizunaai&#x27;</span><br>luna.<span class="hljs-property">name</span> <span class="hljs-comment">// &#x27;luna&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>我们在 Chrome 中分别打印一下之前的实例。可以看到 <code>VTuber</code> 的实例只是包含了 <code>Person</code> 的属性而已，而在原型链上两者是没有任何关系的。<br><img src="/images/constructor2.png" srcset="/img/loading.gif" lazyload></p>
+<p>所以再想一下，构造函数的方法其实真的是“继承”吗？因为对于“子类”来说，是没有办法<strong>调用父类原型</strong>上的方法的。而在用构造函数创建对象时我们就已经知道，把方法写在构造函数里显然不是一个好的解决方法。</p>
+<h3 id="3-组合式继承"><a href="#3-组合式继承" class="headerlink" title="3. 组合式继承"></a>3. 组合式继承</h3><p>既然原型链和构造函数正好能弥补互相之间的缺陷，组合起来我们能愉快地进行继承了。也没什么新的知识点，就直接上代码了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs javaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Person</span>(<span class="hljs-params">name, age, sex</span>)&#123;<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">age</span> = age<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">sex</span> = sex<br>&#125;<br><br><span class="hljs-title class_">Person</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">sayHello</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-variable language_">this</span>.name&#125;</span> say hello ~`</span><br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">VTuber</span>(<span class="hljs-params">name, age, sex</span>)&#123;<br>  <span class="hljs-comment">// 构造函数保证了不同值的传递</span><br>  <span class="hljs-title class_">Person</span>.<span class="hljs-title function_">call</span>(<span class="hljs-variable language_">this</span>, name, age, sex)<br>&#125;<br><br><span class="hljs-comment">// 原型链保证了方法的传递（还有意义上）</span><br><span class="hljs-title class_">VTuber</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>()<br><span class="hljs-title class_">VTuber</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">constructor</span> = <span class="hljs-title class_">VTuber</span><br><br><span class="hljs-keyword">var</span> kizunaai = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VTuber</span>(<span class="hljs-string">&#x27;kizunaai&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;female&#x27;</span>)<br><span class="hljs-keyword">var</span> luna = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VTuber</span>(<span class="hljs-string">&#x27;luna&#x27;</span>, <span class="hljs-number">100</span>, <span class="hljs-string">&#x27;female&#x27;</span>)<br><br>kizunaai.<span class="hljs-property">name</span> <span class="hljs-comment">// &#x27;kizunaai&#x27;</span><br>luna.<span class="hljs-title function_">sayHello</span>() <span class="hljs-comment">// &#x27;luna say hello ~&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-寄生组合式继承"><a href="#4-寄生组合式继承" class="headerlink" title="4. 寄生组合式继承"></a>4. 寄生组合式继承</h3><p>组合式继承是我们最常用的继承方法，几乎可以说是满足了我们的需求。硬要挑刺的话，也就是父类的构造函数调用两次的问题了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javaScript"><span class="hljs-comment">// 以之前的代码为例</span><br><span class="hljs-comment">// 第一次在子类的构造函数中调用</span><br><span class="hljs-title class_">Person</span>.<span class="hljs-title function_">call</span>(<span class="hljs-variable language_">this</span>, name, age, sex)<br><br><span class="hljs-comment">// 第二次在建立原型链时调用</span><br><span class="hljs-title class_">VTuber</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>()<br></code></pre></td></tr></table></figure>
+
+<p>其中第一次是一定省不掉的，要下功夫的话就是在第二次建立原型链的时候了。还是以前面的代码为例，我们就这么继承，数据结构会是怎么样的？<br><img src="/images/combine.png" srcset="/img/loading.gif" lazyload></p>
+<p>可以看到在 <code>VTuber.prototype</code> 上也有 <code>name, age, sex</code> 三个属性，但实际上这三个属性根本没有意义。那么解决的思路就有了，我们需要借助一个空的对象来搭一座桥。（千万别说让 <code>VTuber.prototype = Person.prototype</code> 了，理由参考原型链那部分）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs javaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Person</span>(<span class="hljs-params">name, age, sex</span>)&#123;<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">name</span> = name<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">age</span> = age<br>  <span class="hljs-variable language_">this</span>.<span class="hljs-property">sex</span> = sex<br>&#125;<br><br><span class="hljs-title class_">Person</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">sayHello</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-variable language_">this</span>.name&#125;</span> say hello ~`</span><br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">VTuber</span>(<span class="hljs-params">name, age, sex</span>)&#123;<br>  <span class="hljs-comment">// 构造函数保证了不同值的传递</span><br>  <span class="hljs-title class_">Person</span>.<span class="hljs-title function_">call</span>(<span class="hljs-variable language_">this</span>, name, age, sex)<br>&#125;<br><br><span class="hljs-comment">// 我们要借用一个空对象作为过渡</span><br><span class="hljs-comment">// VTuber.prototype = new Person()</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">A</span>(<span class="hljs-params"></span>)&#123;&#125;<br>A.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span> = <span class="hljs-title class_">Person</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span><br><span class="hljs-title class_">VTuber</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_">A</span>()<br><br><span class="hljs-title class_">VTuber</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">constructor</span> = <span class="hljs-title class_">VTuber</span><br><br><span class="hljs-keyword">var</span> kizunaai = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VTuber</span>(<span class="hljs-string">&#x27;kizunaai&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;female&#x27;</span>)<br><span class="hljs-keyword">var</span> luna = <span class="hljs-keyword">new</span> <span class="hljs-title class_">VTuber</span>(<span class="hljs-string">&#x27;luna&#x27;</span>, <span class="hljs-number">100</span>, <span class="hljs-string">&#x27;female&#x27;</span>)<br><br>kizunaai.<span class="hljs-property">name</span> <span class="hljs-comment">// &#x27;kizunaai&#x27;</span><br>luna.<span class="hljs-title function_">sayHello</span>() <span class="hljs-comment">// &#x27;luna say hello ~&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>上面我们借用了一个 <code>A</code> 来打了个桥。这样一来就在原型链上就没有多余的属性了。（其实两次构造函数是肯定要调的，只是第二次调谁的问题）<br><img src="/images/combine2.png" srcset="/img/loading.gif" lazyload></p>
+<p>而这种搭桥的方式，在“高程”中也被称为是原型式继承。其中关于原型式和寄生式分别和原型链、构造函数相对应，感觉没有这两种直观而且也不常用（个人感觉）所以就不做展开了，有兴趣的小伙伴还是推荐去阅读“高程”。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>至此，有关于继承的笔记就到此为止。这一篇顺着对象的原型链的概念开始，介绍了 JavaScript 中对象继承的几种方式。其中组合继承的方式是我们最常见也是用的最广的，我们需要好好了解一下。</p>
+<p>在看书的过程中，像这样给自己抛点问题，找一找方法间的演变脉络即很有趣也很容易理解。不知道各位小伙伴有什么好的学习方法呢？不妨互相交流一下吧～</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="category-chain-item">前端学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/JavaScript/" class="print-no-link">#JavaScript</a>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+      
+        <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="print-no-link">#读书笔记</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>《JavaScript 高级程序设计》 读书笔记--从原型链复习继承</div>
+      <div>https://konta9.github.io/2018/12/17/2018/《JavaScript 高级程序设计》 读书笔记--从原型链复习继承/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Konata</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2018年12月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/12/23/2018/%E4%B8%8D%E6%80%9D%E8%80%83%E6%89%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84%E5%8D%B1%E6%9C%BA/" title="不思考才是真正的危机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">不思考才是真正的危机</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/12/16/2018/hexo%E4%B8%AD%E5%8A%A0%E5%85%A5Gitalk%E7%9A%84%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" title="hexo中加入Gitalk的问题总结">
+                        <span class="hidden-mobile">hexo中加入Gitalk的问题总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script>
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          Fluid.utils.createCssLink('https://lib.baomitu.com/disqusjs/1.3.0/disqusjs.css');
+          Fluid.utils.createScript('https://lib.baomitu.com/disqusjs/1.3.0/disqus.js', function() {
+            new DisqusJS({
+              shortname: 'konata-blog',
+              apikey: 'AlTcCrDugoy7nYInPZA5SdHFdvQxfiUdMNuifiFG54hy9yqNHkj7wUrRFuJXmBrv'
+            });
+          });
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

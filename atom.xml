@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>此方的秘密基地</title>
+  <icon>https://konta9.github.io/icon.png</icon>
+  <subtitle>Konata&#39;s Blog</subtitle>
+  <link href="https://konta9.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://konta9.github.io/"/>
+  <updated>2024-03-17T15:50:55.724Z</updated>
+  <id>https://konta9.github.io/</id>
+  
+  <author>
+    <name>Konata</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue3 实现一个简单的放大动画</title>
+    <link href="https://konta9.github.io/2024/03/17/2024/a-simple-scale-animation-by-vue3/"/>
+    <id>https://konta9.github.io/2024/03/17/2024/a-simple-scale-animation-by-vue3/</id>
+    <published>2024-03-17T15:50:55.000Z</published>
+    <updated>2024-03-17T15:50:55.724Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这是之前&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端学习" scheme="https://konta9.github.io/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="前端" scheme="https://konta9.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://konta9.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue3 实现一个简单的方位动画</title>
+    <link href="https://konta9.github.io/2024/02/28/2024/a-simple-direction-animation-by-vue3/"/>
+    <id>https://konta9.github.io/2024/02/28/2024/a-simple-direction-animation-by-vue3/</id>
+    <published>2024-02-28T14:59:37.000Z</published>
+    <updated>2024-02-29T12:26:32.173Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这是最近遇到的一个有点意思的需求，需要根据后端返回的数据，在一块地图的具体的方位上显示对应位置标识（位置图钉）。不用十分精确，只要能表现出大致的方位即可。&lt;/p&gt;
+&lt;p&gt;类似下面的效果，有点像游戏里的地图标识。&lt;br&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="前端学习" scheme="https://konta9.github.io/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="前端" scheme="https://konta9.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://konta9.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>改进 Git flow 来管理 Bitbucket 上的私有 TypeScript 依赖</title>
+    <link href="https://konta9.github.io/2024/02/11/2024/improve-git-flow-to-manage-ts-dependency-on-bitbucket-as-private-npm/"/>
+    <id>https://konta9.github.io/2024/02/11/2024/improve-git-flow-to-manage-ts-dependency-on-bitbucket-as-private-npm/</id>
+    <published>2024-02-11T08:04:03.000Z</published>
+    <updated>2024-02-11T08:04:03.350Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在目前的工作中，Bitbucket 同时被我们用作代码仓库和私有 NPM 仓库。通过 &lt;code&gt;git+ssh&lt;/code&gt; 指定 &lt;code&gt;tag&lt;/code&gt; 来安装依赖，对于纯 JavaScript 的项目十分方便。&lt;/p&gt;
+&lt;p&gt;随着部分依赖开始使用</summary>
+        
+      
+    
+    
+    
+    <category term="程序学习" scheme="https://konta9.github.io/categories/%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="npm" scheme="https://konta9.github.io/tags/npm/"/>
+    
+    <category term="git" scheme="https://konta9.github.io/tags/git/"/>
+    
+    <category term="nodejs" scheme="https://konta9.github.io/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo 多语言站点改造</title>
+    <link href="https://konta9.github.io/2024/01/17/2024/update-hexo-i18n/"/>
+    <id>https://konta9.github.io/2024/01/17/2024/update-hexo-i18n/</id>
+    <published>2024-01-17T15:44:08.000Z</published>
+    <updated>2024-01-21T12:18:06.795Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;工作中搜索和查阅的文档以英文居多，于是便想着也改造一下自己博客。支持多语言的同时，顺便也算是给新的一年开一个头。&lt;/p&gt;
+&lt;h2 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="程序学习" scheme="https://konta9.github.io/categories/%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="hexo" scheme="https://konta9.github.io/tags/hexo/"/>
+    
+    <category term="i18n" scheme="https://konta9.github.io/tags/i18n/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2023 年的 iPad 能否进行开发？</title>
+    <link href="https://konta9.github.io/2023/11/14/2023/2023%E5%B9%B4%E7%9A%84iPad%E8%83%BD%E5%90%A6%E8%BF%9B%E8%A1%8C%E5%BC%80%E5%8F%91/"/>
+    <id>https://konta9.github.io/2023/11/14/2023/2023%E5%B9%B4%E7%9A%84iPad%E8%83%BD%E5%90%A6%E8%BF%9B%E8%A1%8C%E5%BC%80%E5%8F%91/</id>
+    <published>2023-11-14T12:30:53.000Z</published>
+    <updated>2024-01-01T14:28:43.298Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/2023/programming.jpeg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;作为一名程序员，我们总是寻找更灵活的方式来进行开发。有一天，我突发奇想：2023年 的 iPad 能否进行开发呢？毕竟连广告也都是 “你的下一台电脑又何必是电脑”。带着这个想法，我开始了一段兴奋且艰难地探索之旅。&lt;/p&gt;
+&lt;p&gt;对于开发环境我认为只要满足以下条件即可成立：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不能是 Remote 的方式，像 VSCode Server 这类的不算。&lt;/li&gt;
+&lt;li&gt;有命令行环境，支持 git、Node.js。&lt;/li&gt;
+&lt;li&gt;编辑器方面能支持 vim 以及其插件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;先说结论，可以满足简单开发，但体验上磕磕绊绊。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>重新认识文档的重要性</title>
+    <link href="https://konta9.github.io/2023/01/14/2023/%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86%E6%96%87%E6%A1%A3%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/"/>
+    <id>https://konta9.github.io/2023/01/14/2023/%E9%87%8D%E6%96%B0%E8%AE%A4%E8%AF%86%E6%96%87%E6%A1%A3%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</id>
+    <published>2023-01-14T12:30:53.000Z</published>
+    <updated>2024-01-02T16:06:11.413Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;2022 年有幸完整地参与了一个物联网项目，整个项目涉及APP、服务端、硬件三端交互。我参与服务端的设计与开发。同时受制于硬件，现有的对接逻辑也没发复用只能从零开始。在诸多 buff 的加持下，这个项目煎熬了我大半年。好在同组的小伙伴们比较给力，磕磕绊绊下也算完成了第一阶段的开发。&lt;/p&gt;
+&lt;p&gt;整个项目下来，最大的收获就是让我重新认识到了文档的重要性。特别是在跨团队的项目中有着不可或缺的作用。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="软件设计" scheme="https://konta9.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2021 年阅读计划</title>
+    <link href="https://konta9.github.io/2021/01/09/2021/2021%20%E5%B9%B4%E9%98%85%E8%AF%BB%E8%AE%A1%E5%88%92/"/>
+    <id>https://konta9.github.io/2021/01/09/2021/2021%20%E5%B9%B4%E9%98%85%E8%AF%BB%E8%AE%A1%E5%88%92/</id>
+    <published>2021-01-09T13:16:00.000Z</published>
+    <updated>2024-01-01T14:28:43.294Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/2021/book-list.jpeg&quot; alt=&quot;title&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这一年在知识技能上的规划主要以巩固补足基础为主，在集中攻克一到两个知识点的基础上进行横向展开。因此今年的阅读书单也将围绕这个目的，并且结合工作进行展开。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想杂谈" scheme="https://konta9.github.io/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="生活" scheme="https://konta9.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020年年终小结</title>
+    <link href="https://konta9.github.io/2020/12/03/2020/2020%E5%B9%B4%E5%B9%B4%E7%BB%88%E5%B0%8F%E7%BB%93/"/>
+    <id>https://konta9.github.io/2020/12/03/2020/2020%E5%B9%B4%E5%B9%B4%E7%BB%88%E5%B0%8F%E7%BB%93/</id>
+    <published>2020-12-02T16:00:00.000Z</published>
+    <updated>2024-01-01T14:28:43.282Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/2020/year-end-summary.jpg&quot; alt=&quot;title-bg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;转眼之间已是年末，又来到了年终小结的时候。无论这一年是魔幻还是平淡，每当做小结的时候，内心都会有一丝忐忑。当初定下的目标完成了多少？有哪些是自己偷懒了呢？这些问题，悄悄划过的时间是不会给出答案的。&lt;/p&gt;
+&lt;p&gt;或许这就是做小结的意义所在。这一次同样也会从工作、生活、学习三个方面来做小结。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想杂谈" scheme="https://konta9.github.io/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="生活" scheme="https://konta9.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>程序员上岸指北</title>
+    <link href="https://konta9.github.io/2020/07/31/2020/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8A%E5%B2%B8%E6%8C%87%E5%8C%97/"/>
+    <id>https://konta9.github.io/2020/07/31/2020/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8A%E5%B2%B8%E6%8C%87%E5%8C%97/</id>
+    <published>2020-07-31T14:31:31.000Z</published>
+    <updated>2024-01-01T14:28:43.284Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/2020/financial-freedom.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;此前 28 岁拼多多程序员财务自由的新闻在朋友圈中传开。不久之后随着蚂蚁金服在两地同时上市，又是一波程序员财务自由了。似乎在这个资本寒冬中又给了同为程序员的我们一丝希望。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;苦海无涯，回头是岸&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;即便工作辛苦，程序员的内心依旧是幽默的。上岸，这个在程序员之间调侃的词，有着多种含义。或是因为财务自由离开，或是厌倦了工作离开，亦或是成为了“输出”到社会的人才被迫离开……在离开之后一般会去考公务员、去国企，或是回老家开店。记得上一次看到这个词的时候，正是华为集中清理 34 岁以上员工的时候。&lt;/p&gt;
+&lt;p&gt;那么作为一个步入三十的平凡的程序员，今天也来聊聊程序员如何上岸吧。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想杂谈" scheme="https://konta9.github.io/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="生活" scheme="https://konta9.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>整理自己的知识图谱</title>
+    <link href="https://konta9.github.io/2020/07/12/2020/%E6%95%B4%E7%90%86%E8%87%AA%E5%B7%B1%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/"/>
+    <id>https://konta9.github.io/2020/07/12/2020/%E6%95%B4%E7%90%86%E8%87%AA%E5%B7%B1%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/</id>
+    <published>2020-07-12T14:10:30.000Z</published>
+    <updated>2024-01-01T14:28:43.284Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/2020/mindmap.png&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;为什么要整理知识图谱&quot;&gt;&lt;a href=&quot;#为什么要整理知识图谱&quot; class=&quot;headerlink&quot; title=&quot;为什么要整理知识图谱&quot;&gt;&lt;/a&gt;为什么要整理知识图谱&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;大音希声，大象无形，大道至简&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;自从步入 Coding 的世界之后，几乎每天都有新的知识出现。特别是在做前端的时候，新框架、新类库更是层出不穷。即便跟着指引走完教程，在实际上手时仍会有一些手足无措。其原因可能是没有与已有的知识产生联系。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="程序学习" scheme="https://konta9.github.io/categories/%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="前端" scheme="https://konta9.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 一瞥</title>
+    <link href="https://konta9.github.io/2020/06/21/2020/React%20%E4%B8%80%E7%9E%A5/"/>
+    <id>https://konta9.github.io/2020/06/21/2020/React%20%E4%B8%80%E7%9E%A5/</id>
+    <published>2020-06-21T02:22:30.000Z</published>
+    <updated>2024-01-01T14:28:43.282Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/2020/react-glance.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最近使用 React 重构了一个内部管理工具的前端界面。在等待 PM 试用提需求的间隙，接到了一个给后端小伙伴科普 React 的任务，便有了本文。本文将从 DOM 以及早期的 Web 开发入手，期望让没有接触过前端开发或者没有 React 经验的后端同学，对 React 有一个入门的认识与兴趣。而对于前端经验丰富的小伙伴，也期望本文能是你们拉后端入坑的文章之一。&lt;/p&gt;
+&lt;h2 id=&quot;0-什么是-DOM-？&quot;&gt;&lt;a href=&quot;#0-什么是-DOM-？&quot; class=&quot;headerlink&quot; title=&quot;0. 什么是 DOM ？&quot;&gt;&lt;/a&gt;0. 什么是 DOM ？&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;DOM&lt;/strong&gt; 全称 Document Object Model，即文档对象模型，是前端开发中最重要的概念之一。网页由一个个 HTML 标签组成，而 DOM 则提供了访问和操作 HTML 的标准方法。利用 DOM 提供的 API，我们就能使用 JavaScript 对页面进行各种操作。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="程序学习" scheme="https://konta9.github.io/categories/%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="前端" scheme="https://konta9.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="React" scheme="https://konta9.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020年年中小结</title>
+    <link href="https://konta9.github.io/2020/06/09/2020/2020%E5%B9%B4%E5%B9%B4%E4%B8%AD%E5%B0%8F%E7%BB%93/"/>
+    <id>https://konta9.github.io/2020/06/09/2020/2020%E5%B9%B4%E5%B9%B4%E4%B8%AD%E5%B0%8F%E7%BB%93/</id>
+    <published>2020-06-09T12:49:11.000Z</published>
+    <updated>2024-01-01T14:28:43.281Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/2020/summary.jpg&quot; alt=&quot;title-bg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;疫情的出现让许多人的生活与以往大不相同，然而时间还是一如既往地默默前进着。”最长春节“与”超前“的在家办公之后，2020 年也来到了中点。自然也到了年中小结的时候了。&lt;/p&gt;
+&lt;p&gt;关注此方公众号的小伙伴知道，此方每半年会做一次小结。与 &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzA5MjEzMjg2NA==&amp;mid=2247485576&amp;idx=1&amp;sn=3e3fc056007a805fe1368733bec4a057&amp;chksm=90708be7a70702f1ec16a2a6045c7727815b0d8f8f726e2cc510edafa6454f884d416a66f1d9&amp;token=1803782758&amp;lang=zh_CN#rd&quot;&gt;2019 的自我回顾&lt;/a&gt; 做对比，这一次也会从工作、学习、生活、公众号&amp;#x2F;博客四个方面来做小结。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想杂谈" scheme="https://konta9.github.io/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="生活" scheme="https://konta9.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 VSCode 远程调试 Node.js</title>
+    <link href="https://konta9.github.io/2020/03/21/2020/%E4%BD%BF%E7%94%A8%20VSCode%20%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%20Node.js/"/>
+    <id>https://konta9.github.io/2020/03/21/2020/%E4%BD%BF%E7%94%A8%20VSCode%20%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%20Node.js/</id>
+    <published>2020-03-21T04:10:15.000Z</published>
+    <updated>2024-01-01T14:28:43.282Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;通常在 VSCode 中调试 Node.js 只需要按下 &lt;code&gt;F5&lt;/code&gt; 或是使用调试面板。这种方式对于调试本地代码非常方便，特别是对于脚本类的调试。不过实际工作中，开发代码往往部署在服务器上，如果想在本地调试的话就意味着本地也需要一套相同的环境。为了避免这种情况，就需要用到远程调试了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="程序学习" scheme="https://konta9.github.io/categories/%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Node.js" scheme="https://konta9.github.io/tags/Node-js/"/>
+    
+    <category term="VSCode" scheme="https://konta9.github.io/tags/VSCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>译:解谜 10 倍程序员神话</title>
+    <link href="https://konta9.github.io/2020/03/14/2020/%E8%AF%91_%E8%A7%A3%E8%B0%9C%2010%20%E5%80%8D%E7%A8%8B%E5%BA%8F%E5%91%98%E7%A5%9E%E8%AF%9D/"/>
+    <id>https://konta9.github.io/2020/03/14/2020/%E8%AF%91_%E8%A7%A3%E8%B0%9C%2010%20%E5%80%8D%E7%A8%8B%E5%BA%8F%E5%91%98%E7%A5%9E%E8%AF%9D/</id>
+    <published>2020-03-14T12:51:10.000Z</published>
+    <updated>2024-01-01T14:28:43.285Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;“10 倍程序员” 的概念诞生于 《人月神话》一书中，在国外一度成为热议话题。所谓的 “10 倍程序员” 究竟又是怎样的呢？是否真的是一个人干十个人的活呢？&lt;/p&gt;
+&lt;p&gt;本文来自于 IT 之家，原文地址: &lt;a href=&quot;https://payne.org/blog/the-myth-of-the-myth-of-the-10x-programmer/?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=website&quot;&gt;https://payne.org/blog/the-myth-of-the-myth-of-the-10x-programmer/?utm_source=wanqu.co&amp;amp;utm_campaign=Wanqu+Daily&amp;amp;utm_medium=website&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想杂谈" scheme="https://konta9.github.io/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="前端" scheme="https://konta9.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>译：正确地关闭 Node.js app</title>
+    <link href="https://konta9.github.io/2020/02/29/2020/%E8%AF%91_%E6%AD%A3%E7%A1%AE%E5%9C%B0%E5%85%B3%E9%97%AD%20Node.js%20app/"/>
+    <id>https://konta9.github.io/2020/02/29/2020/%E8%AF%91_%E6%AD%A3%E7%A1%AE%E5%9C%B0%E5%85%B3%E9%97%AD%20Node.js%20app/</id>
+    <published>2020-02-29T12:39:11.000Z</published>
+    <updated>2024-01-01T14:28:43.285Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文是在阮一峰老师的&lt;a href=&quot;http://www.ruanyifeng.com/blog/2020/02/weekly-issue-96.html&quot;&gt;科技爱好者周刊：第 96 期&lt;/a&gt;中介绍的文章。平时都是 &lt;code&gt;Ctrl + C&lt;/code&gt; 简单粗暴来解决，因此来看一下正确关闭 Node.js 程序的姿势。&lt;/p&gt;
+&lt;p&gt;英文水平有限，如有错误之处还请指正。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;正文：正确地关闭-Node-js-app&quot;&gt;&lt;a href=&quot;#正文：正确地关闭-Node-js-app&quot; class=&quot;headerlink&quot; title=&quot;正文：正确地关闭 Node.js app&quot;&gt;&lt;/a&gt;正文：正确地关闭 Node.js app&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;原文地址： &lt;a href=&quot;https://yvonnickfrin.dev/shutdown-correctly-nodejs-apps&quot;&gt;Shutdown correctly Node.js apps&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;正确地关闭应用，并防止其处理新的请求是非常重要的。我将以一个服务器应用为例子展开。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想杂谈" scheme="https://konta9.github.io/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="Node.js" scheme="https://konta9.github.io/tags/Node-js/"/>
+    
+    <category term="程序学习" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>全干工程师的自我修养 上手GraphQL</title>
+    <link href="https://konta9.github.io/2020/02/26/2020/%E5%85%A8%E5%B9%B2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20GraphQL%20%E5%85%A5%E9%97%A8/"/>
+    <id>https://konta9.github.io/2020/02/26/2020/%E5%85%A8%E5%B9%B2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20GraphQL%20%E5%85%A5%E9%97%A8/</id>
+    <published>2020-02-26T12:36:41.000Z</published>
+    <updated>2024-01-01T14:28:43.283Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/images/2020/gql.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在前一篇博客 &lt;a href=&quot;./%E5%85%A8%E5%B9%B2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%80%E4%BD%93%E7%9A%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF.md&quot;&gt;全干工程师的自我修养 前后端一体的启动模板&lt;/a&gt; 里介绍了自己搭建的启动模板。在这个 &lt;a href=&quot;https://github.com/Konata9/faiz-admin&quot;&gt;模板项目&lt;/a&gt; 中引入了 GraphQL 作为中间层。本文是对自己的学习过程做一个总结，如果理解错误或者不到位的地方，欢迎各位小伙伴指正、交流。&lt;/p&gt;
+&lt;h2 id=&quot;GraphQL-及其担任的角色&quot;&gt;&lt;a href=&quot;#GraphQL-及其担任的角色&quot; class=&quot;headerlink&quot; title=&quot;GraphQL 及其担任的角色&quot;&gt;&lt;/a&gt;GraphQL 及其担任的角色&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="程序学习" scheme="https://konta9.github.io/categories/%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Node.js" scheme="https://konta9.github.io/tags/Node-js/"/>
+    
+    <category term="后端" scheme="https://konta9.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="GraphQL" scheme="https://konta9.github.io/tags/GraphQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>全干工程师的自我修养 前后端一体的启动模板</title>
+    <link href="https://konta9.github.io/2020/02/24/2020/%E5%85%A8%E5%B9%B2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%80%E4%BD%93%E7%9A%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF/"/>
+    <id>https://konta9.github.io/2020/02/24/2020/%E5%85%A8%E5%B9%B2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%80%E4%BD%93%E7%9A%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF/</id>
+    <published>2020-02-24T13:35:35.000Z</published>
+    <updated>2024-01-01T14:28:43.283Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;项目动机&quot;&gt;&lt;a href=&quot;#项目动机&quot; class=&quot;headerlink&quot; title=&quot;项目动机&quot;&gt;&lt;/a&gt;项目动机&lt;/h2&gt;&lt;p&gt;从前到后走一套是一直想做的事情，于是利用这次长假搭建了一个基于 &lt;code&gt;TypeScript&lt;/code&gt; 的前后端一体的项目启动模板。即作为自我学习练手，也方便自己之后搭建项目。&lt;/p&gt;
+&lt;p&gt;概括来说是一个 &lt;strong&gt;React + Express + MongoDB&lt;/strong&gt; 的项目。为了挑战自我，这一次刻意挑选掌握还不全面的 &lt;code&gt;TypeScript&lt;/code&gt;，前端方面使用了 &lt;code&gt;styled-component&lt;/code&gt; 来进行样式的编写，前后端交互使用 &lt;code&gt;GraphQL&lt;/code&gt; 来代替传统的 &lt;code&gt;RESTful&lt;/code&gt; 架构。不得不说，熟练度不够外加踩新坑，让搭建初期痛不欲生，甚至几度想放弃。好在风雨之后终见彩虹，项目跑起来之后，感觉自己对 &lt;code&gt;TypeScript&lt;/code&gt; 和 &lt;code&gt;GraphQL&lt;/code&gt; 也有了一定的认识。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;本文从项目角度进行整体介绍，踩过的坑的细节以及搭建中遇到的问题会另写文章单独展开。&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Demo-展示&quot;&gt;&lt;a href=&quot;#Demo-展示&quot; class=&quot;headerlink&quot; title=&quot;Demo 展示&quot;&gt;&lt;/a&gt;Demo 展示&lt;/h3&gt;&lt;p&gt;整个项目是一个启动模板。因为后台系统的通用度相对较高，并且自己也较为熟悉，因此作为本项目的前端页面。当然前端是怎样的都可以。&lt;/p&gt;
+&lt;p&gt;项目 GitHub 地址: &lt;a href=&quot;https://github.com/Konata9/faiz-admin&quot;&gt;Faiz Admin&lt;/a&gt;。启动可以参考项目中的 README。&lt;/p&gt;
+&lt;p&gt;欢迎小伙伴 clone 下来跑一下，也欢迎 Star，交流，建议，指正。（_在思考项目名的时候，恰巧看到了堆着的假面骑士 Faiz 的模型，便以此为项目名。_）&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="程序学习" scheme="https://konta9.github.io/categories/%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="前端" scheme="https://konta9.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="后端" scheme="https://konta9.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>译：程序员该做好低收入的准备</title>
+    <link href="https://konta9.github.io/2020/02/14/2020/%E8%AF%91_%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E5%81%9A%E5%A5%BD%E4%BD%8E%E6%94%B6%E5%85%A5%E7%9A%84%E5%87%86%E5%A4%87/"/>
+    <id>https://konta9.github.io/2020/02/14/2020/%E8%AF%91_%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E5%81%9A%E5%A5%BD%E4%BD%8E%E6%94%B6%E5%85%A5%E7%9A%84%E5%87%86%E5%A4%87/</id>
+    <published>2020-02-14T08:17:13.000Z</published>
+    <updated>2024-01-01T14:28:43.285Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;程序员在现在仿佛意味着高收入，BAT 的光环以及时不时流出的某某大厂年终奖 1x 个月的消息更是让人们对这一职业心生向往。只是事实真的如此吗？&lt;/p&gt;
+&lt;p&gt;本文是在阮一峰老师的&lt;a href=&quot;http://www.ruanyifeng.com/blog/2020/02/weekly-issue-94.html&quot;&gt;科技爱好者周刊：第 94 期&lt;/a&gt;中看到的，觉得会给我们一些启示，所以翻译出来顺便练手。英文水平有限，如有错误之处还请指正。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;原文地址： &lt;a href=&quot;https://www.jefftk.com/p/programmers-should-plan-for-lower-pay&quot;&gt;https://www.jefftk.com/p/programmers-should-plan-for-lower-pay&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;前言：我们并不明白为何程序员的收入如此之高。如果你恰好是程序员，要相信这很可能是暂时的，因此对未来做一个明确的规划是非常值得的，因为你很可被解雇并且无法找到类似的高薪工作。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想杂谈" scheme="https://konta9.github.io/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="职业生涯" scheme="https://konta9.github.io/tags/%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从日本官僚制随想互联网 35 岁裁员</title>
+    <link href="https://konta9.github.io/2020/02/04/2020/%E4%BB%8E%E6%97%A5%E6%9C%AC%E5%AE%98%E5%83%9A%E5%88%B6%E9%9A%8F%E6%83%B3%E4%BA%92%E8%81%94%E7%BD%91%2035%20%E5%B2%81%E8%A3%81%E5%91%98/"/>
+    <id>https://konta9.github.io/2020/02/04/2020/%E4%BB%8E%E6%97%A5%E6%9C%AC%E5%AE%98%E5%83%9A%E5%88%B6%E9%9A%8F%E6%83%B3%E4%BA%92%E8%81%94%E7%BD%91%2035%20%E5%B2%81%E8%A3%81%E5%91%98/</id>
+    <published>2020-02-04T09:02:35.000Z</published>
+    <updated>2024-01-01T14:28:43.282Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;假期里看了半佛老师的&lt;a href=&quot;https://www.bilibili.com/video/av84552259&quot;&gt;你不知道的互联网30年秘史&lt;/a&gt;，回顾了中国互联网澎湃的历史。回味之余也想起了自己在日本的工作经历，就莫名联想到了互联网的裁员风波与日本的官僚制度，于是便有了这篇博客。因此 &lt;strong&gt;本文纯为个人兴起而作，随想成分较大，仅供参考，欢迎小伙伴们来交流。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;官僚下凡与日本的官僚制度&quot;&gt;&lt;a href=&quot;#官僚下凡与日本的官僚制度&quot; class=&quot;headerlink&quot; title=&quot;官僚下凡与日本的官僚制度&quot;&gt;&lt;/a&gt;官僚下凡与日本的官僚制度&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;官僚下凡：特指离职后的中央高级官僚接受再就职斡旋，以便获得其出身部委所管辖的外围团体、关联企业、独立行政法人、国立大学法人以及特殊法人等机构的高级职位。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在学习日语的时候，老师曾简单地介绍过日本的官僚制度。俗话说 “一人得道，鸡犬升天”，然而在日本公务员中却是相反的情况。同期（同一时间进入政府机构的人）的公务员只有 1 人能晋升局至级以上职位，其余人则会被劝退。只是在拥有终身雇用制文化的日本，人事部门在奖励被劝退的人一笔可观的退职金之外，还要为他们安排再就业岗位。这些被劝退的公务员由于精通管理并且在政商两界拥有大量的人脉，自然也受到民间企业的青睐。一般都能在关联企业中，担任高管。对于日本的公务员来说，“升天” 还是 “下凡” 或许都不错。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想杂谈" scheme="https://konta9.github.io/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="求职" scheme="https://konta9.github.io/tags/%E6%B1%82%E8%81%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作 7 年的些许感悟</title>
+    <link href="https://konta9.github.io/2020/01/31/2020/%E5%B7%A5%E4%BD%9C%207%20%E5%B9%B4%E7%9A%84%E4%BA%9B%E8%AE%B8%E6%84%9F%E6%82%9F/"/>
+    <id>https://konta9.github.io/2020/01/31/2020/%E5%B7%A5%E4%BD%9C%207%20%E5%B9%B4%E7%9A%84%E4%BA%9B%E8%AE%B8%E6%84%9F%E6%82%9F/</id>
+    <published>2020-01-31T02:41:21.000Z</published>
+    <updated>2024-01-01T14:28:43.283Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;突如其来的疫情打乱了大部分人过年的节奏，延长的假期也让人过得不是滋味。愿疫情能尽快稳定，也祝看博客的小伙伴们无论何时都身体健康，百毒不侵。&lt;/p&gt;
+&lt;p&gt;工作之后时间真的过的飞快，从 2013 年毕业至今也快 7 年了。自从大三入了前端这个坑之后，就再也没出来过。此方至今一共换过 3 次工作，先去了日本做派遣，回国后做前端，最近又转职成了后端，也算是全干工程师了。这篇博客既可以是对自己工作经历的回顾，也可以算是对上一篇&lt;a href=&quot;./%E8%81%8A%E8%81%8A%E5%B9%B4%E5%90%8E%E6%8D%A2%E5%B7%A5%E4%BD%9C%E7%9A%84%E4%BA%8B%E6%83%85%E5%90%A7.md&quot;&gt;聊聊年后换工作的事情吧&lt;/a&gt;的补充吧。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随想杂谈" scheme="https://konta9.github.io/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="求职" scheme="https://konta9.github.io/tags/%E6%B1%82%E8%81%8C/"/>
+    
+  </entry>
+  
+</feed>

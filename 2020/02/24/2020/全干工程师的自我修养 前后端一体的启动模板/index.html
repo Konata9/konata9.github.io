@@ -1,0 +1,770 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Konata">
+  <meta name="keywords" content="此方,Konata,Konata9,博客,分享,记录,技术">
+  
+    <meta name="description" content="项目动机从前到后走一套是一直想做的事情，于是利用这次长假搭建了一个基于 TypeScript 的前后端一体的项目启动模板。即作为自我学习练手，也方便自己之后搭建项目。 概括来说是一个 React + Express + MongoDB 的项目。为了挑战自我，这一次刻意挑选掌握还不全面的 TypeScript，前端方面使用了 styled-component 来进行样式的编写，前后端交互使用 Gra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全干工程师的自我修养 前后端一体的启动模板">
+<meta property="og:url" content="https://konta9.github.io/2020/02/24/2020/%E5%85%A8%E5%B9%B2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20%E5%89%8D%E5%90%8E%E7%AB%AF%E4%B8%80%E4%BD%93%E7%9A%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF/index.html">
+<meta property="og:site_name" content="此方的秘密基地">
+<meta property="og:description" content="项目动机从前到后走一套是一直想做的事情，于是利用这次长假搭建了一个基于 TypeScript 的前后端一体的项目启动模板。即作为自我学习练手，也方便自己之后搭建项目。 概括来说是一个 React + Express + MongoDB 的项目。为了挑战自我，这一次刻意挑选掌握还不全面的 TypeScript，前端方面使用了 styled-component 来进行样式的编写，前后端交互使用 Gra">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://konta9.github.io/images/2020/faizAdmin-login.gif">
+<meta property="og:image" content="https://konta9.github.io/images/2020/faizAdmin-content.gif">
+<meta property="og:image" content="https://konta9.github.io/images/2020/FullStack.png">
+<meta property="article:published_time" content="2020-02-24T13:35:35.000Z">
+<meta property="article:modified_time" content="2024-01-01T14:28:43.283Z">
+<meta property="article:author" content="Konata">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="后端">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://konta9.github.io/images/2020/faizAdmin-login.gif">
+  
+  
+  
+  <title>全干工程师的自我修养 前后端一体的启动模板 - 此方的秘密基地</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"konta9.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":"G-HZE2KZXTWN"},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"BirbQk2IcLjcATgSrzYGJHe7-MdYXbMMI","app_key":"WrRy9Sjv7hCFj1jO9Tm10BYi","server_url":"https://birbqk2i.api.lncldglobal.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-HZE2KZXTWN", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-HZE2KZXTWN');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="此方的秘密基地" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>此方的秘密基地</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/atom.xml" target="_self">
+                <i class="iconfont icon-rss-fill"></i>
+                <span>RSS</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://konata9.github.io/en/" target="_self">
+                <i class="iconfont icon-message-multi-language-fill"></i>
+                <span>English</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="全干工程师的自我修养 前后端一体的启动模板"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-02-24 21:35" pubdate>
+          2020年2月24日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          19 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">全干工程师的自我修养 前后端一体的启动模板</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="项目动机"><a href="#项目动机" class="headerlink" title="项目动机"></a>项目动机</h2><p>从前到后走一套是一直想做的事情，于是利用这次长假搭建了一个基于 <code>TypeScript</code> 的前后端一体的项目启动模板。即作为自我学习练手，也方便自己之后搭建项目。</p>
+<p>概括来说是一个 <strong>React + Express + MongoDB</strong> 的项目。为了挑战自我，这一次刻意挑选掌握还不全面的 <code>TypeScript</code>，前端方面使用了 <code>styled-component</code> 来进行样式的编写，前后端交互使用 <code>GraphQL</code> 来代替传统的 <code>RESTful</code> 架构。不得不说，熟练度不够外加踩新坑，让搭建初期痛不欲生，甚至几度想放弃。好在风雨之后终见彩虹，项目跑起来之后，感觉自己对 <code>TypeScript</code> 和 <code>GraphQL</code> 也有了一定的认识。</p>
+<p><em>本文从项目角度进行整体介绍，踩过的坑的细节以及搭建中遇到的问题会另写文章单独展开。</em></p>
+<h3 id="Demo-展示"><a href="#Demo-展示" class="headerlink" title="Demo 展示"></a>Demo 展示</h3><p>整个项目是一个启动模板。因为后台系统的通用度相对较高，并且自己也较为熟悉，因此作为本项目的前端页面。当然前端是怎样的都可以。</p>
+<p>项目 GitHub 地址: <a target="_blank" rel="noopener" href="https://github.com/Konata9/faiz-admin">Faiz Admin</a>。启动可以参考项目中的 README。</p>
+<p>欢迎小伙伴 clone 下来跑一下，也欢迎 Star，交流，建议，指正。（_在思考项目名的时候，恰巧看到了堆着的假面骑士 Faiz 的模型，便以此为项目名。_）</p>
+<span id="more"></span>
+<p>在介绍项目之前，可以先来看一下项目的页面。因为只是模板项目，所以在功能上仅实现了登录、登出、用户以及角色的添加和查询等最基础（通用）的功能。毕竟实际工作中需求多种多样，需要具体情况具体应对了。</p>
+<p><img src="/images/2020/faizAdmin-login.gif" srcset="/img/loading.gif" lazyload alt="登陆页"><br><img src="/images/2020/faizAdmin-content.gif" srcset="/img/loading.gif" lazyload alt="内容页"></p>
+<h2 id="技术栈梳理"><a href="#技术栈梳理" class="headerlink" title="技术栈梳理"></a>技术栈梳理</h2><p>从前到后涉及的知识面比较广泛，所以将本项目主要的知识点整理成下面的导图方便梳理。技术栈更多的是个人的喜好，前后端的框架均可以换成自己顺手的框架。</p>
+<p><img src="/images/2020/FullStack.png" srcset="/img/loading.gif" lazyload alt="涉及技术导图"></p>
+<h3 id="项目语言：TypeScript"><a href="#项目语言：TypeScript" class="headerlink" title="项目语言：TypeScript"></a>项目语言：TypeScript</h3><p>采用 <code>TypesScript</code> 的好处已经不用赘述。尽管在代码量上会因为 <code>interface</code> 的关系会增加不少，以及刚上手时把人折磨得半死的类型提示错误，但在 Debug 上会轻松许多，大多的 Bug 都偏向业务逻辑，而语法上的错误基本没有了。</p>
+<p>目前主流框架都已支持 <code>TypeScript</code> （Vue 3.0 将完全支持），从面向简历编程的角度来说也应该学习起 <code>TypeScript</code> 了。只要躺过了类型错误的坑，coding 就会舒服很多，<code>TypeScript</code> 的强类型也迫使在写代码时要思考的更加严谨。（可以多利用一下 VSCode 的提示）</p>
+<h3 id="前端框架：React"><a href="#前端框架：React" class="headerlink" title="前端框架：React"></a>前端框架：React</h3><p>三大主流框架中选择 <code>React</code>，主要还是隔个人喜欢函数式自由的风格以及 Hooks，在本项目中也基本都使用 Hooks。UI 方面，Material UI 太依赖与 Google Font 和 Icon，对于国内来说可能不太方便；微软的 Fabric UI 浓浓的 Office 风格，很多组件还是需要自己进行封装。所以最终还是选择回了 antd。</p>
+<p>在状态管理方面，实在不愿意去手写 <code>action</code> 和 <code>reducers</code>，于是使用了 <code>mobx</code>。这样就能在一个 <code>class</code> 中完成数据状态的管理了。没有了 <code>action</code> 和 <code>reducer</code>，代码也干净很多。另外封装了一个全局 <code>loading</code> 来实现类似 <code>dva</code> 中 <code>loading.effects[xxx]</code> 的效果。</p>
+<p>与后端通信方面以 ApolloClient 和 Axios 结合使用。ApolloClient 是比较常用的 GraphQL 客户端，与服务端的 ApolloServer 配套（其实分开使用也没事），主要负责 GraphQL 部分。Axios 用来负责 RESTful 的接口，用于不需要权限的 api，如 <code>/login</code>。这里的划分主要和 GraphQL 的鉴权机制有关。</p>
+<h3 id="后端框架：Express-ApolloServer"><a href="#后端框架：Express-ApolloServer" class="headerlink" title="后端框架：Express + ApolloServer"></a>后端框架：Express + ApolloServer</h3><p>Express 一定不会陌生，最早出现的服务器框架，插件丰富第三方支持也很不错。这一次使用的 Apollo Server、TypeGraphQL 都主要以 Express 为例子。文档上的支持越好，后期 Debug 时也越方便。后端这边最大变化就是引入了 ApolloServer 以及 GraphQL 相关的功能。剩下的其实和正常的后端服务器完全相同。</p>
+<h3 id="数据库：MongoDB"><a href="#数据库：MongoDB" class="headerlink" title="数据库：MongoDB"></a>数据库：MongoDB</h3><p>在数据库方面，这次采用了 MongoDB。一方面是现在工作中使用，另一方面搭建起来简单，直接使用 Docker 即可。</p>
+<p>数据库的 ORM 毫无意外的就是 Mongoose，本项目自然用的是 TypeScript 版本的 <code>TypeGoose</code>，并且可以与 <code>TypeGrahQL</code> （定义 GraphQL Schema 类型的库）的 Schema 可以公用，能有效减少重复 coding。毕竟 Mongoose 的 Schema 在一定程度上和 GraphQL 的 Schema 有关联。要维护两份相同的文件简直就是噩梦……</p>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>在上面简单地介绍了一下技术栈，接下来就来看一下项目的目录结构。</p>
+<p>整个项目划成 <code>frontend</code> 和 <code>server</code> 两部分，即前端和服务端。使用 <code>TypeScript</code> 后会有许多 <code>interface</code>，关于 <code>interface</code> 是统一放到一个文件夹中管理还是分散在文件中这个问题一直困扰着我。在这个项目里面主要还是分散在各个文件中自行管理（尽管建了最外层文件夹）。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs stylus">.<br>├── frontend <span class="hljs-comment">// 前端工程文件</span><br>│   ├── config <span class="hljs-comment">// 全局配置文件</span><br>│   │   └── index<span class="hljs-selector-class">.ts</span><br>│   ├── index<span class="hljs-selector-class">.html</span><br>│   ├── locale <span class="hljs-comment">// 国际化文本文件</span><br>│   │   └── zh_CN<br>│   ├── package<span class="hljs-selector-class">.json</span><br>│   ├── public <span class="hljs-comment">// 静态资源文件</span><br>│   ├── <span class="hljs-attribute">src</span><br>│   │   ├── client<span class="hljs-selector-class">.ts</span> <span class="hljs-comment">// ApolloClient </span><br>│   │   ├── constants <span class="hljs-comment">// 常量文件夹</span><br>│   │   ├── global<span class="hljs-selector-class">.d</span><span class="hljs-selector-class">.ts</span><br>│   │   ├── index<span class="hljs-selector-class">.tsx</span> <span class="hljs-comment">// 入口文件</span><br>│   │   ├── interface <span class="hljs-comment">// interface 文件夹</span><br>│   │   ├── pages <span class="hljs-comment">// 页面文件夹</span><br>│   │   ├── service <span class="hljs-comment">// 处理 effects 以及 Query 语句</span><br>│   │   ├── store <span class="hljs-comment">// mobx store 文件</span><br>│   │   └── utils <span class="hljs-comment">// 工具函数</span><br>│   ├── tsconfig<span class="hljs-selector-class">.json</span><br>│   ├── webpack<br>│   │   ├── webpack<span class="hljs-selector-class">.config</span><span class="hljs-selector-class">.js</span><br>│   │   └── webpack<span class="hljs-selector-class">.dev</span><span class="hljs-selector-class">.config</span><span class="hljs-selector-class">.js</span><br>│   └── yarn<span class="hljs-selector-class">.lock</span><br>└── server <span class="hljs-comment">// 服务端工程文件</span><br>    ├── config <span class="hljs-comment">// 全局配置文件</span><br>    │   └── index<span class="hljs-selector-class">.ts</span><br>    ├── database<span class="hljs-selector-class">.ts</span> <span class="hljs-comment">// 数据库链接 (Mongoose)</span><br>    ├── dbInit<span class="hljs-selector-class">.ts</span> <span class="hljs-comment">// 数据库初始化文件</span><br>    ├── index<span class="hljs-selector-class">.ts</span> <span class="hljs-comment">// 入口文件 Express + ApolloServer</span><br>    ├── logger <span class="hljs-comment">// 日志存放文件夹</span><br>    ├── nodemon<span class="hljs-selector-class">.json</span><br>    ├── package<span class="hljs-selector-class">.json</span><br>    ├── <span class="hljs-attribute">src</span><br>    │   ├── constants <span class="hljs-comment">// 常量文件夹</span><br>    │   ├── controller <span class="hljs-comment">// 数据库 CRUD 操作部分</span><br>    │   ├── graphql <span class="hljs-comment">// GraphQL 的 Schema &amp; resolver，GraphQL 与 Mongoose 的 Schema 可以公用</span><br>    │   ├── router <span class="hljs-comment">// 路由文件，处理 RESTful 的接口</span><br>    │   └── utils <span class="hljs-comment">// 工具函数</span><br>    ├── tsconfig<span class="hljs-selector-class">.json</span><br>    └── yarn.lock<br></code></pre></td></tr></table></figure>
+
+<h2 id="更进一步"><a href="#更进一步" class="headerlink" title="更进一步"></a>更进一步</h2><p>现在的模板项目中已经涉及了很多知识与框架，但严格来说还有更进一步的空间。</p>
+<p>大部分集中在服务端，比如日志管理模块（log4js)；服务启动后用于监视的 pm2；可以增加 Redis 来缓解数据库压力；多个服务之间通信的消息队列……总之，能更进一步的空间还有很大。</p>
+<p>关于日志以及 pm2 的部分将会是接下来打算做的部分。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0/" class="category-chain-item">程序学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+      
+        <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/" class="print-no-link">#程序员</a>
+      
+        <a href="/tags/%E5%90%8E%E7%AB%AF/" class="print-no-link">#后端</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>全干工程师的自我修养 前后端一体的启动模板</div>
+      <div>https://konta9.github.io/2020/02/24/2020/全干工程师的自我修养 前后端一体的启动模板/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Konata</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2020年2月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/02/26/2020/%E5%85%A8%E5%B9%B2%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%20GraphQL%20%E5%85%A5%E9%97%A8/" title="全干工程师的自我修养 上手GraphQL">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">全干工程师的自我修养 上手GraphQL</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/02/14/2020/%E8%AF%91_%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%A5%E5%81%9A%E5%A5%BD%E4%BD%8E%E6%94%B6%E5%85%A5%E7%9A%84%E5%87%86%E5%A4%87/" title="译：程序员该做好低收入的准备">
+                        <span class="hidden-mobile">译：程序员该做好低收入的准备</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script>
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          Fluid.utils.createCssLink('https://lib.baomitu.com/disqusjs/1.3.0/disqusjs.css');
+          Fluid.utils.createScript('https://lib.baomitu.com/disqusjs/1.3.0/disqus.js', function() {
+            new DisqusJS({
+              shortname: 'konata-blog',
+              apikey: 'AlTcCrDugoy7nYInPZA5SdHFdvQxfiUdMNuifiFG54hy9yqNHkj7wUrRFuJXmBrv'
+            });
+          });
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
