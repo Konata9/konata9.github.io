@@ -6,7 +6,7 @@
   <link href="https://konta9.github.io/atom.xml" rel="self"/>
   
   <link href="https://konta9.github.io/"/>
-  <updated>2024-03-17T15:50:55.724Z</updated>
+  <updated>2024-03-21T15:36:48.682Z</updated>
   <id>https://konta9.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从开发的视角聊聊 AI 带来感受与变化</title>
+    <link href="https://konta9.github.io/2024/03/21/2024/view-from-programmer-of-ai/"/>
+    <id>https://konta9.github.io/2024/03/21/2024/view-from-programmer-of-ai/</id>
+    <published>2024-03-21T15:36:48.000Z</published>
+    <updated>2024-03-21T15:36:48.682Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一个 4 年没做前端的 &lt;strong&gt;“前”&lt;/strong&gt; 前端开发，在 ChatGPT（3.5）的帮助下，只用了一个下午就用 Vue3 + Vuetify 完成了 3</summary>
+        
+      
+    
+    
+    
+    <category term="随想杂谈" scheme="https://konta9.github.io/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="AI" scheme="https://konta9.github.io/tags/AI/"/>
+    
+    <category term="开发" scheme="https://konta9.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue3 实现一个简单的放大动画</title>
@@ -480,28 +509,6 @@
 &lt;p&gt;官僚下凡：特指离职后的中央高级官僚接受再就职斡旋，以便获得其出身部委所管辖的外围团体、关联企业、独立行政法人、国立大学法人以及特殊法人等机构的高级职位。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;在学习日语的时候，老师曾简单地介绍过日本的官僚制度。俗话说 “一人得道，鸡犬升天”，然而在日本公务员中却是相反的情况。同期（同一时间进入政府机构的人）的公务员只有 1 人能晋升局至级以上职位，其余人则会被劝退。只是在拥有终身雇用制文化的日本，人事部门在奖励被劝退的人一笔可观的退职金之外，还要为他们安排再就业岗位。这些被劝退的公务员由于精通管理并且在政商两界拥有大量的人脉，自然也受到民间企业的青睐。一般都能在关联企业中，担任高管。对于日本的公务员来说，“升天” 还是 “下凡” 或许都不错。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="随想杂谈" scheme="https://konta9.github.io/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/"/>
-    
-    
-    <category term="程序员" scheme="https://konta9.github.io/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
-    
-    <category term="求职" scheme="https://konta9.github.io/tags/%E6%B1%82%E8%81%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工作 7 年的些许感悟</title>
-    <link href="https://konta9.github.io/2020/01/31/2020/%E5%B7%A5%E4%BD%9C%207%20%E5%B9%B4%E7%9A%84%E4%BA%9B%E8%AE%B8%E6%84%9F%E6%82%9F/"/>
-    <id>https://konta9.github.io/2020/01/31/2020/%E5%B7%A5%E4%BD%9C%207%20%E5%B9%B4%E7%9A%84%E4%BA%9B%E8%AE%B8%E6%84%9F%E6%82%9F/</id>
-    <published>2020-01-31T02:41:21.000Z</published>
-    <updated>2024-01-01T14:28:43.283Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;突如其来的疫情打乱了大部分人过年的节奏，延长的假期也让人过得不是滋味。愿疫情能尽快稳定，也祝看博客的小伙伴们无论何时都身体健康，百毒不侵。&lt;/p&gt;
-&lt;p&gt;工作之后时间真的过的飞快，从 2013 年毕业至今也快 7 年了。自从大三入了前端这个坑之后，就再也没出来过。此方至今一共换过 3 次工作，先去了日本做派遣，回国后做前端，最近又转职成了后端，也算是全干工程师了。这篇博客既可以是对自己工作经历的回顾，也可以算是对上一篇&lt;a href=&quot;./%E8%81%8A%E8%81%8A%E5%B9%B4%E5%90%8E%E6%8D%A2%E5%B7%A5%E4%BD%9C%E7%9A%84%E4%BA%8B%E6%83%85%E5%90%A7.md&quot;&gt;聊聊年后换工作的事情吧&lt;/a&gt;的补充吧。&lt;/p&gt;</summary>
     
     
     

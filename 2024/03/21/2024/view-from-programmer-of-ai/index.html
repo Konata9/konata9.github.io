@@ -18,27 +18,27 @@
   <meta name="author" content="Konata">
   <meta name="keywords" content="此方,Konata,Konata9,博客,分享,记录,技术">
   
-    <meta name="description" content="这是之前方位动画的衍生需求。先根据后端返回的数据排列内容，然后当用户点击某块内容后居中放大并根据具体的方位数据显示方位动画。 可以参考下面的效果。 设计思路定位动画我们在之前已经实现了。那么这里只要考虑如何实现放大动画，最后将两者结合起来就好。从后端拿到的返回值是一个固定长度的数组，所以这里还是用 div 利用 flex 布局将图片平铺展示，利用 CSS transform 进行位置移动和缩放。">
+    <meta name="description" content="一个 4 年没做前端的 “前” 前端开发，在 ChatGPT（3.5）的帮助下，只用了一个下午就用 Vue3 + Vuetify 完成了 3 个完整带交互的页面。 提交代码后最直观的感受是：前端要被代替了 。放在 4 年前，同样的需求在不熟悉 Vue3 的前提下至少需要 2 天左右的时间。如此巨大的变化，让我有点庆幸还好转去了后端。但，后端就不会被代替吗？ AI 的冲击自 ChatGPT 问世之后">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue3 实现一个简单的放大动画">
-<meta property="og:url" content="https://konta9.github.io/2024/03/17/2024/a-simple-scale-animation-by-vue3/index.html">
+<meta property="og:title" content="从开发的视角聊聊 AI 带来感受与变化">
+<meta property="og:url" content="https://konta9.github.io/2024/03/21/2024/view-from-programmer-of-ai/index.html">
 <meta property="og:site_name" content="此方的秘密基地">
-<meta property="og:description" content="这是之前方位动画的衍生需求。先根据后端返回的数据排列内容，然后当用户点击某块内容后居中放大并根据具体的方位数据显示方位动画。 可以参考下面的效果。 设计思路定位动画我们在之前已经实现了。那么这里只要考虑如何实现放大动画，最后将两者结合起来就好。从后端拿到的返回值是一个固定长度的数组，所以这里还是用 div 利用 flex 布局将图片平铺展示，利用 CSS transform 进行位置移动和缩放。">
+<meta property="og:description" content="一个 4 年没做前端的 “前” 前端开发，在 ChatGPT（3.5）的帮助下，只用了一个下午就用 Vue3 + Vuetify 完成了 3 个完整带交互的页面。 提交代码后最直观的感受是：前端要被代替了 。放在 4 年前，同样的需求在不熟悉 Vue3 的前提下至少需要 2 天左右的时间。如此巨大的变化，让我有点庆幸还好转去了后端。但，后端就不会被代替吗？ AI 的冲击自 ChatGPT 问世之后">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://konta9.github.io/images/2024/vue3-scale-animate-demo.gif">
-<meta property="og:image" content="https://konta9.github.io/images/2024/transform-calculate.jpg">
-<meta property="og:image" content="https://codesandbox.io/static/img/play-codesandbox.svg">
-<meta property="article:published_time" content="2024-03-17T15:50:55.000Z">
-<meta property="article:modified_time" content="2024-03-17T15:50:55.724Z">
+<meta property="og:image" content="https://konta9.github.io/images/2024/job-of-engineer.png">
+<meta property="og:image" content="https://konta9.github.io/images/2024/devin-chat.png">
+<meta property="article:published_time" content="2024-03-21T15:36:48.000Z">
+<meta property="article:modified_time" content="2024-03-21T15:36:48.682Z">
 <meta property="article:author" content="Konata">
-<meta property="article:tag" content="前端">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="程序员">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="开发">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://konta9.github.io/images/2024/vue3-scale-animate-demo.gif">
+<meta name="twitter:image" content="https://konta9.github.io/images/2024/job-of-engineer.png">
   
   
   
-  <title>Vue3 实现一个简单的放大动画 - 此方的秘密基地</title>
+  <title>从开发的视角聊聊 AI 带来感受与变化 - 此方的秘密基地</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -250,7 +250,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Vue3 实现一个简单的放大动画"></span>
+            <span id="subtitle" data-typed-text="从开发的视角聊聊 AI 带来感受与变化"></span>
           
         </div>
 
@@ -261,8 +261,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-17 23:50" pubdate>
-          2024年3月17日 晚上
+        <time datetime="2024-03-21 23:36" pubdate>
+          2024年3月21日 晚上
         </time>
       </span>
     
@@ -273,7 +273,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          631 字
+          1.4k 字
         
       </span>
     
@@ -284,7 +284,7 @@
         
         
         
-          8 分钟
+          16 分钟
         
       </span>
     
@@ -321,37 +321,46 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Vue3 实现一个简单的放大动画</h1>
+            <h1 id="seo-header">从开发的视角聊聊 AI 带来感受与变化</h1>
             
             
               <div class="markdown-body">
                 
-                <p>这是之前<a target="_blank" rel="noopener" href="https://konata9.github.io./2024/02/28/2024/a-simple-direction-animation-by-vue3/">方位动画</a>的衍生需求。先根据后端返回的数据排列内容，然后当用户点击某块内容后居中放大并根据具体的方位数据显示方位动画。</p>
-<p>可以参考下面的效果。<br><img src="/images/2024/vue3-scale-animate-demo.gif" srcset="/img/loading.gif" lazyload alt="demo动画"></p>
-<h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><p>定位动画我们在之前已经实现了。那么这里只要考虑如何实现放大动画，最后将两者结合起来就好。从后端拿到的返回值是一个固定长度的数组，所以这里还是用 <code>div</code> 利用 <code>flex</code> 布局将图片平铺展示，利用 CSS <code>transform</code> 进行位置移动和缩放。</p>
-<p>接下来就是如何计算出每个 <code>div</code> 的位移。DOM 元素的位移主要关注左上角顶点的位移。针对这个需求可以画出如下草图。外层 <code>div</code> 为 container，内层 <code>div</code> 为 inner。</p>
-<p><img src="/images/2024/transform-calculate.jpg" srcset="/img/loading.gif" lazyload alt="计算草图"></p>
-<p>从上图可以看到，每个 <code>div</code> 的位移即 <code>center.left - inner.left</code>, <code>center.top - inner.top</code>.<br>container 的中心点:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> containerCenterX = containerRect.<span class="hljs-property">left</span> + containerRect.<span class="hljs-property">width</span> / <span class="hljs-number">2</span>;<br><span class="hljs-keyword">const</span> containerCenterY = containerRect.<span class="hljs-property">top</span> + containerRect.<span class="hljs-property">height</span> / <span class="hljs-number">2</span>;<br></code></pre></td></tr></table></figure>
-<p>inner 移动的偏移量：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 让 inner 移到 container 的正中间</span><br><span class="hljs-keyword">const</span> offsetX = containerCenterX - itemRect.<span class="hljs-property">width</span> / <span class="hljs-number">2</span> - itemRect.<span class="hljs-property">left</span>;<br><span class="hljs-keyword">const</span> offsetY = containerCenterY - itemRect.<span class="hljs-property">height</span> / <span class="hljs-number">2</span> - itemRect.<span class="hljs-property">top</span>;<br></code></pre></td></tr></table></figure>
-
-<p>最后将方位动画的 <code>div</code> 叠在 <code>inner</code> 上面即可。</p>
-<h2 id="代码实现和-Demo-演示"><a href="#代码实现和-Demo-演示" class="headerlink" title="代码实现和 Demo 演示"></a>代码实现和 Demo 演示</h2><p>梳理清思路之后，就可以实现代码了。Demo 已经放在 CodeSandbox 上了。其中最主要的还是位移计算的逻辑。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">showActiveImage</span> = (<span class="hljs-params">imageEl</span>) =&gt; &#123;<br>  <span class="hljs-keyword">const</span> containerEl = container.<span class="hljs-property">value</span>;<br><br>  <span class="hljs-keyword">const</span> containerRect = containerEl!.<span class="hljs-title function_">getBoundingClientRect</span>();<br>  <span class="hljs-keyword">const</span> itemRect = imageEl!.<span class="hljs-title function_">getBoundingClientRect</span>();<br><br>  <span class="hljs-keyword">const</span> containerCenterX = containerRect.<span class="hljs-property">left</span> + containerRect.<span class="hljs-property">width</span> / <span class="hljs-number">2</span>;<br>  <span class="hljs-keyword">const</span> containerCenterY = containerRect.<span class="hljs-property">top</span> + containerRect.<span class="hljs-property">height</span> / <span class="hljs-number">2</span>;<br><br>  <span class="hljs-keyword">const</span> offsetX = containerCenterX - itemRect.<span class="hljs-property">width</span> / <span class="hljs-number">2</span> - itemRect.<span class="hljs-property">left</span>;<br>  <span class="hljs-keyword">const</span> offsetY = containerCenterY - itemRect.<span class="hljs-property">height</span> / <span class="hljs-number">2</span> - itemRect.<span class="hljs-property">top</span>;<br><br>  imageEl!.<span class="hljs-property">style</span>.<span class="hljs-property">transform</span> = <span class="hljs-string">`translate(<span class="hljs-subst">$&#123;offsetX&#125;</span>px, <span class="hljs-subst">$&#123;offsetY&#125;</span>px) scale(1.2)`</span>;<br>  imageEl!.<span class="hljs-property">style</span>.<span class="hljs-property">zIndex</span> = <span class="hljs-number">100</span>;<br>&#125;;<br></code></pre></td></tr></table></figure>
-
-<iframe src="https://codesandbox.io/p/devbox/simple-scale-animation-demo-vjhsyh?embed=1&file=%2Fsrc%2FApp.vue"
-  style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-  title="simple-scale-animation-demo"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
-
-<p><a target="_blank" rel="noopener" href="https://codesandbox.io/p/devbox/simple-scale-animation-demo-vjhsyh?file=/src/App.vue&embed=1"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" srcset="/img/loading.gif" lazyload alt="Edit simple-scale-animation-demo"></a></p>
-<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p>这次的需求也可以用于展示动画。比如产品展示或者局部细节的展示。根据不同的需求结合不同的动画，可以让我们的页面变得更加酷炫。</p>
-<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>其实这两次的动画效果，代码都是利用 ChatGPT 生成的，我自己基本没有什么参与。在 4 年前我就从前端转到了后端，因此对于前端方面的知识还停留在很久之前。但有了 ChatGPT 的加持，我也可以用当前的前端技术实现一些需求。</p>
-<p>尽管这次的需求比较简单，但通过实践可以发现，利用好 AI 能够拓宽我们的技术面，让我们做到更多事情。但于此同时，作为开发者也应当思考与 AI 之间的关系了，这又是另一个话题了</p>
-
+                <p>一个 4 年没做前端的 <strong>“前”</strong> 前端开发，在 ChatGPT（3.5）的帮助下，只用了一个下午就用 Vue3 + Vuetify 完成了 3 个完整带交互的页面。</p>
+<p>提交代码后最直观的感受是：<strong>前端要被代替了</strong> 。放在 4 年前，同样的需求在不熟悉 Vue3 的前提下至少需要 2 天左右的时间。如此巨大的变化，让我有点庆幸还好转去了后端。但，后端就不会被代替吗？</p>
+<h2 id="AI-的冲击"><a href="#AI-的冲击" class="headerlink" title="AI 的冲击"></a>AI 的冲击</h2><p>自 ChatGPT 问世之后，世界像被按下了加速键。Claude、Copilot、MidJourney 一众 AI 产品开始有意无意地改变我们的工作与生活。</p>
+<p>最近在 InfoQ 的公众上看到了下面这篇文章：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ss1uzFTLKynGXxM0M5RO0Q">敲了17年代码，我现在连个面试机会都得不到</a><br><img src="/images/2024/job-of-engineer.png" srcset="/img/loading.gif" lazyload alt="职位需求的变化"></p>
+<p>对于职位需求的变化，文章提到：</p>
+<blockquote>
+<p>例如，后端工程师的职位空缺仅下降了 14%，而前端工程师的职位空缺则减少达 24%。Henley Wing Chiu 认为这里很可能存在“AI 效应”，因为企业需要稳定且可扩展的后端来部署大语言模型等机器学习艺术形式。而另一方面，投资建设 AI 体系并不需要强大的前端技能。无论我们使用 Angular 还是 React，对机器学习艺术形式的性能都没什么实质影响。</p>
+</blockquote>
+<p>回到上面的问题，看来后端也会被代替，只是时间问题。但，这个时间是多久呢？</p>
+<p>在我还没有进一步思考的时候。就看到了 AI 程序员 Devin 的消息。在这篇文章的描述中，已经可以和人问答修 debug 了。文章：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650587922&idx=1&sn=34bb9daa8f83c888cd56719665aa1341&chksm=f1fe7591c689fc874478b1325afcb14034728e015d5ea80411360de542474d8bbce4c2b7e594&mpshare=1&srcid=0319xxdLz0m7h3kE0mjyYCni&sharer_shareinfo=8fdb202127ee606f2787948f1de772f6&sharer_shareinfo_first=8fdb202127ee606f2787948f1de772f6&from=groupmessage&scene=1&subscene=93&clicktime=1710842925&enterid=1710842925&sessionid=0&ascene=1&fasttmpl_type=0&fasttmpl_fullversion=7124241-zh_CN-zip&fasttmpl_flag=0&realreporttime=1710842925330&devicetype=pad-android-34&version=28002f3f&nettype=ctnet&lang=zh_CN&countrycode=CN&exportkey=n_ChQIAhIQ9sHPkojDansr/ywVoW/A3hLuAQIE97dBBAEAAAAAAM6ABmVtmZUAAAAOpnltbLcz9gKNyK89dVj0tK1VcCwpq9051P458SHdp1w+xn2ZldqZDVhX+OfAhWNNQtP4Y348LHkgzJBblxIzKyPYrNG5WVdrWRQXw0QNyZDpJofMzh8/dD+6femoZIo08TPxqjCDNWMT7BIWLu6P61CgNiIxTHFtJcxlPg2CIJeeZ0LRfnqJLMayauZJH0zXA77vzNFrSlhN5GWOvxO0+SmYy3fXnZalmgUpdCZXN0tl/oXBS4yX9iiKNp73n/ZNcnpaV88YRglQRUiylzjZ2SVfB73xwJw=&pass_ticket=Pe6WDz7TOqYpaO2U8hNqL1rCG5argJ0uVtooCPh4fMqpxDfiodplaqel9BZOFBL/G+Ll2ABcv3zS6HPyw0p3xQ==&wx_header=3">AI程序员Devin卧底工作群修bug！和CTO聊技术，网友：顶级码农水平</a></p>
+<p><img src="/images/2024/devin-chat.png" srcset="/img/loading.gif" lazyload></p>
+<p>很难想象 Devin 开放公测后，求职市场会有怎样的变化。开源版的 <a target="_blank" rel="noopener" href="https://github.com/OpenDevin/OpenDevin">OpenDevin</a> 也已经获得高赞，相信相关的应用在不久后也会出现。</p>
+<p>所以是准备躺平还是再挣扎一下呢？或许还有哪些我们还没有看到的。</p>
+<h2 id="AI-带来的机会"><a href="#AI-带来的机会" class="headerlink" title="AI 带来的机会"></a>AI 带来的机会</h2><p>毕竟 AI 出现的初衷还是为了更好的帮助人类，解放生产力。这篇文章 <a target="_blank" rel="noopener" href="https://www.geekpark.net/news/332526">我，一个技术公司的普通行政，成了公司的 AI 产品专家</a> 让我看到了另一面。</p>
+<blockquote>
+<p>这就是 AI 带来的伟大变化。我认为它能快速帮某领域的非专业人员达到中等专业水平——未来很多岗位的限制，可能都会因为初阶技能的消失而打通。</p>
+<p>这可能会对一些职业产生冲击，比如程序员可能会忧心忡忡，自己仅靠写代码完成需求的时代，是否一去不复返了？</p>
+<p>但反过来说，这也是个体的机会。</p>
+<p>未来很有可能是一个 AI 超级单兵的时代——只要你有想法、创意，其他的事情都可以让 AI 帮你完成。</p>
+</blockquote>
+<p>再次回到前面的问题，前端&#x2F;后端会被代替吗？</p>
+<p>我觉得会，但不完全会。</p>
+<p>需求明确的工作会被代替或者说由 AI 来执行，比如<a target="_blank" rel="noopener" href="https://konata9.github.io/2024/03/17/2024/a-simple-scale-animation-by-vue3/">之前文章</a>中实现的动画效果、页面布局，以及如一些批处理的脚本命令等。越是明确的需求，GPT 的回答就越准确。作为直面用户的前端，页面上的需求是十分明确的。</p>
+<p>反之，一些需要抽象的工作就不容易被替代。比如代码结构的组织、功能层级的划分以及架构设计等工作。这部分工作需要在项目需求、应用场景、历史包袱、人员成本等各种因素中做折中和平衡。自然语言都描述不清楚的需求，AI 自然也很难给到合适结果。</p>
+<p>但可以看到的是，在 AI 的加持下，技术的门槛正在被削弱、执行某件事的阻力变小了。取而代之的是，如何将需求转换为提示词的能力开始变得重要。</p>
+<p>试想当今后的工作会逐渐由 AI 来完成细节部分，人类进行检查并完成抽象部分，生产力将会得到极大的解放。目前 Copilot，Codeium 等编码辅助 AI 已经可以完成 JSDoc、函数补全甚至单元测试了。</p>
+<h2 id="一些思考"><a href="#一些思考" class="headerlink" title="一些思考"></a>一些思考</h2><p>生产力的解放一方面可以让个人完成更多的事情，另一方面会带来产能过剩的问题。只看周围，或许暂时并没有多大的变化。该做的需求还是要做，该修的 bug 还是要修。但靴子终究有落地的时候，或早或晚。作为普通人，即使没法应对，也应有所准备。</p>
+<p>引用前面<a target="_blank" rel="noopener" href="https://www.geekpark.net/news/332526">文章</a>的结尾，与各位共勉。</p>
+<blockquote>
+<p>AI 这个词很大，它能达到的高度也是目前难以望及的。我觉得作为普通人，想法和行动可以朴素一些：就是把手头的活，与 AI 结合好，一点点来。慢慢地，你会发现自己融入了这波技术洪流，并被它推至一个前所未有的世界。这件事确实让人兴奋。</p>
+</blockquote>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>敲了17年代码，我现在连个面试机会都得不到](<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ss1uzFTLKynGXxM0M5RO0Q">https://mp.weixin.qq.com/s/ss1uzFTLKynGXxM0M5RO0Q</a>)
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI1MTIzMzI2MA==&mid=2650587922&idx=1&sn=34bb9daa8f83c888cd56719665aa1341&chksm=f1fe7591c689fc874478b1325afcb14034728e015d5ea80411360de542474d8bbce4c2b7e594&mpshare=1&srcid=0319xxdLz0m7h3kE0mjyYCni&sharer_shareinfo=8fdb202127ee606f2787948f1de772f6&sharer_shareinfo_first=8fdb202127ee606f2787948f1de772f6&from=groupmessage&scene=1&subscene=93&clicktime=1710842925&enterid=1710842925&sessionid=0&ascene=1&fasttmpl_type=0&fasttmpl_fullversion=7124241-zh_CN-zip&fasttmpl_flag=0&realreporttime=1710842925330&devicetype=pad-android-34&version=28002f3f&nettype=ctnet&lang=zh_CN&countrycode=CN&exportkey=n_ChQIAhIQ9sHPkojDansr/ywVoW/A3hLuAQIE97dBBAEAAAAAAM6ABmVtmZUAAAAOpnltbLcz9gKNyK89dVj0tK1VcCwpq9051P458SHdp1w+xn2ZldqZDVhX+OfAhWNNQtP4Y348LHkgzJBblxIzKyPYrNG5WVdrWRQXw0QNyZDpJofMzh8/dD+6femoZIo08TPxqjCDNWMT7BIWLu6P61CgNiIxTHFtJcxlPg2CIJeeZ0LRfnqJLMayauZJH0zXA77vzNFrSlhN5GWOvxO0+SmYy3fXnZalmgUpdCZXN0tl/oXBS4yX9iiKNp73n/ZNcnpaV88YRglQRUiylzjZ2SVfB73xwJw=&pass_ticket=Pe6WDz7TOqYpaO2U8hNqL1rCG5argJ0uVtooCPh4fMqpxDfiodplaqel9BZOFBL/G+Ll2ABcv3zS6HPyw0p3xQ==&wx_header=3">AI程序员Devin卧底工作群修bug！和CTO聊技术，网友：顶级码农水平</a>
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://www.geekpark.net/news/332526">我，一个技术公司的普通行政，成了公司的 AI 产品专家</a>
+<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
                 
               </div>
             
@@ -369,7 +378,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" class="category-chain-item">前端学习</a>
+  <a href="/categories/%E9%9A%8F%E6%83%B3%E6%9D%82%E8%B0%88/" class="category-chain-item">随想杂谈</a>
   
   
 
@@ -384,9 +393,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+        <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/" class="print-no-link">#程序员</a>
       
-        <a href="/tags/Vue/" class="print-no-link">#Vue</a>
+        <a href="/tags/AI/" class="print-no-link">#AI</a>
+      
+        <a href="/tags/%E5%BC%80%E5%8F%91/" class="print-no-link">#开发</a>
       
     </div>
   
@@ -398,8 +409,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Vue3 实现一个简单的放大动画</div>
-      <div>https://konta9.github.io/2024/03/17/2024/a-simple-scale-animation-by-vue3/</div>
+      <div>从开发的视角聊聊 AI 带来感受与变化</div>
+      <div>https://konta9.github.io/2024/03/21/2024/view-from-programmer-of-ai/</div>
     </div>
     <div class="license-meta">
       
@@ -411,7 +422,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年3月17日</div>
+          <div>2024年3月21日</div>
         </div>
       
       
@@ -455,18 +466,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/21/2024/view-from-programmer-of-ai/" title="从开发的视角聊聊 AI 带来感受与变化">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">从开发的视角聊聊 AI 带来感受与变化</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/28/2024/a-simple-direction-animation-by-vue3/" title="Vue3 实现一个简单的方位动画">
-                        <span class="hidden-mobile">Vue3 实现一个简单的方位动画</span>
+                      <a href="/2024/03/17/2024/a-simple-scale-animation-by-vue3/" title="Vue3 实现一个简单的放大动画">
+                        <span class="hidden-mobile">Vue3 实现一个简单的放大动画</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
