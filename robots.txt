@@ -1,0 +1,3 @@
+Sitemap: https://konata9.cc/sitemap.xml
+User-agent:*
+Disallow:

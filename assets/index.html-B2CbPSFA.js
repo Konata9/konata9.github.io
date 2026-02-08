@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app-DF6kZglP.js";const r={};function n(o,s){return a(),t("div")}const i=e(r,[["render",n]]),l=JSON.parse('{"path":"/weekly/","title":"周刊","lang":"zh-CN","frontmatter":{"lang":"zh-CN","title":"周刊","draft":true},"readingTime":{"minutes":0,"words":0},"git":{},"filePathRelative":null,"headers":[],"type":"posts"}');export{i as comp,l as data};
